@@ -1,5 +1,6 @@
 import FadeInStagger from "./FadeIn"
 import zla from 'app/assets/logos/zero-limit-adventures.png'
+import foxHollow from 'app/assets/logos/Fox-Hollow.png'
 
 
 export default function Clients() {
@@ -33,8 +34,8 @@ export default function Clients() {
               height={48}
             />
             <img
-              className="max-h-12 w-full object-contain object-left"
-              src="https://tailwindui.com/img/logos/reform-logo-gray-900.svg"
+              className="max-h-20 w-full object-contain object-left"
+              src={foxHollow}
               alt="Reform"
               width={104}
               height={48}
