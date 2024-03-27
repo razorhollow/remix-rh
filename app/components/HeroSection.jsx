@@ -31,7 +31,7 @@ export default function HeroSection() {
               From Peak to Pixel
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-300">
-              Combining the power of story and modern technology to elevate outdoor brands
+              Combining the power of story with modern technology to elevate outdoor brands
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link

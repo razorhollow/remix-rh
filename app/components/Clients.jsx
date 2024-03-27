@@ -1,6 +1,10 @@
 import FadeInStagger from "./FadeIn"
 import zla from 'app/assets/logos/zero-limit-adventures.png'
 import foxHollow from 'app/assets/logos/Fox-Hollow.png'
+import fowlplay from 'app/assets/logos/fowlplay.png'
+import douglas from 'app/assets/logos/Douglas.png'
+import retrieverRoadmap from 'app/assets/logos/retriever-roadmap.png'
+import tailwater from 'app/assets/logos/tailwater.png'
 
 
 export default function Clients() {
@@ -16,7 +20,7 @@ export default function Clients() {
             <div className="mt-8 flex items-center gap-x-6">
               <a
                 href="#"
-                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md bg-pine px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Create account
               </a>
@@ -36,35 +40,33 @@ export default function Clients() {
             <img
               className="max-h-20 w-full object-contain object-left"
               src={foxHollow}
-              alt="Reform"
+              alt="Fox Hollow Lodge"
               width={104}
               height={48}
             />
             <img
-              className="max-h-12 w-full object-contain object-left"
-              src="https://tailwindui.com/img/logos/savvycal-logo-gray-900.svg"
-              alt="SavvyCal"
+              className="max-h-8 w-full object-contain object-left"
+              src={douglas}
+              alt="Douglas Outdoors"
               width={140}
               height={48}
             />
             <img
-              className="max-h-12 w-full object-contain object-left"
-              src="https://tailwindui.com/img/logos/laravel-logo-gray-900.svg"
-              alt="Laravel"
+              className="max-h-20 w-full object-contain object-left"
+              src={fowlplay}
+              alt="Fowl Play Waterfowl Guide Services"
               width={136}
               height={48}
             />
             <img
-              className="max-h-12 w-full object-contain object-left"
-              src="https://tailwindui.com/img/logos/transistor-logo-gray-900.svg"
-              alt="Transistor"
-              width={158}
-              height={48}
+              className="max-h-20 w-full object-contain object-left pl-20"
+              src={retrieverRoadmap}
+              alt="Retriever Roadmap"
             />
             <img
-              className="max-h-12 w-full object-contain object-left"
-              src="https://tailwindui.com/img/logos/statamic-logo-gray-900.svg"
-              alt="Statamic"
+              className="max-h-20 w-full object-contain object-left"
+              src={tailwater}
+              alt="Tailwater Lodge"
               width={147}
               height={48}
             />
