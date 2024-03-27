@@ -2,6 +2,7 @@ import type { MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 
 import Clients from 'app/components/Clients'
+import Contact from 'app/components/Contact'
 import FeatureSection from 'app/components/FeatureSection'
 import HeroSection from 'app/components/HeroSection'
 import NavBar from 'app/components/NavBar'
@@ -19,6 +20,7 @@ export default function Index() {
     <Clients />
     <USP />
     <FeatureSection />
+    <Contact />
     </>
   );
 }

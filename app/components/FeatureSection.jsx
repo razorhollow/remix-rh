@@ -6,7 +6,7 @@ const features = [
   {
     name: 'Full Stack Web Development',
     description:
-      'Weaving the wilderness of the web with cutting-edge technology, our full stack web development service crafts robust, seamless websites that captivate and engage your audience',
+      'Weaving the wilderness of the web with cutting-edge technology, our full stack web development service crafts robust, seamless websites that captivate and engage your audience.',
     icon: CodeBracketIcon,
   },
   {
@@ -24,7 +24,7 @@ const features = [
   {
     name: 'Photography',
     description:
-      "Through our lens, every snapshot becomes a portal to the outdoors, showcasing the authentic beauty of nature and your brand's spirit of adventure",
+      "Through our lens, every snapshot becomes a portal to the outdoors, showcasing the authentic beauty of nature and your brand's spirit of adventure.",
     icon: PhotoIcon,
   },
 ]
