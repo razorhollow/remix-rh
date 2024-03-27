@@ -1,4 +1,5 @@
-import FadeInStagger from "./FadeIn"
+import { motion, stagger } from 'framer-motion'
+
 import zla from 'app/assets/logos/zero-limit-adventures.png'
 import foxHollow from 'app/assets/logos/Fox-Hollow.png'
 import fowlplay from 'app/assets/logos/fowlplay.png'
@@ -29,7 +30,11 @@ export default function Clients() {
               </a>
             </div>
           </div>
-          <FadeInStagger faster className="mx-auto grid w-full max-w-xl grid-cols-2 items-center gap-y-12 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:pl-8">
+          <motion.div 
+            className="mx-auto grid w-full max-w-xl grid-cols-2 items-center gap-y-12 sm:gap-y-14 lg:mx-0 lg:max-w-none   lg:pl-8"
+            initial={{opacity: 0, y: 24}}
+            whileInView={{ y: 0, opacity: 1}}
+          >
             <img
               className="max-h-20 w-full object-contain object-left"
               src={zla}
@@ -70,7 +75,7 @@ export default function Clients() {
               width={147}
               height={48}
             />
-          </FadeInStagger>
+          </motion.div>
         </div>
       </div>
     </div>

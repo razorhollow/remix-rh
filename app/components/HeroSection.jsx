@@ -1,6 +1,6 @@
 import { Link } from '@remix-run/react';
 
-import FadeIn from '../components/FadeIn'
+import { motion } from 'framer-motion';
 import heroAssetURL from 'app/assets/fly-fishing.jpeg'
 
 export default function HeroSection() {
@@ -26,8 +26,15 @@ export default function HeroSection() {
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
           </div>
-          <FadeIn className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+          <motion.div 
+            className="text-center"
+            initial={{opacity: 0 }}
+            whileInView={{opacity: 1 }}
+            transition={{ duration: 5.0, delay: 1.0 }}
+          >
+            <h1 
+              className="text-4xl font-bold tracking-tight text-white sm:text-6xl"
+            >
               From Peak to Pixel
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-300">
@@ -44,7 +51,7 @@ export default function HeroSection() {
                 Learn more <span aria-hidden="true">→</span>
               </Link>
             </div>
-          </FadeIn>
+          </motion.div>
         </div>
         <div
           className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
