@@ -1,20 +1,37 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
+import { json, redirect } from '@remix-run/node';
+import { Form } from '@remix-run/react';
+import { Resend } from 'resend';
 import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 
-export default function Example() {
+const resend = new Resend(process.env.RESEND_API_KEY)
+
+export const action = async ({ request }) => {
+  const formData = await request.formData();
+  const firstName = formData.get('first-name')
+  const lastName = formData.get('last-name')
+  const email = formData.get('email')
+  const phone = formData.get('phone-number')
+  const message = formData.get('message')
+
+  const { error } = await resend.emails.send({
+    from: 'Acme <onboarding@resend.dev>',
+    to: ['rob@razorhollow.com'],
+    subject: 'Contact Form Submission',
+    html: `
+            <p>${message}</p>
+            <p>sent by ${firstName} ${lastName}, phone: ${phone}</p><p>email: ${email}</p>
+          `
+  })
+
+  if(error) {
+    console.log(error)
+    return json({ error }, 400)
+  }
+  
+  return redirect(`/thanks`);
+};
+
+export default function Contact() {
   return (
     <div className="relative isolate bg-white">
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
@@ -66,7 +83,7 @@ export default function Example() {
                   <PhoneIcon className="h-7 w-6 text-gray-400" aria-hidden="true" />
                 </dt>
                 <dd>
-                  <a className="hover:text-gray-900" href="tel:+1 (555) 234-5678">
+                  <a className="hover:text-gray-900" href="tel:+1 (607) 684-5690">
                     +1 (607) 684-5690
                   </a>
                 </dd>
@@ -85,7 +102,7 @@ export default function Example() {
             </dl>
           </div>
         </div>
-        <form action="#" method="POST" className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
+        <Form method="POST" className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
           <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
@@ -168,7 +185,7 @@ export default function Example() {
               </button>
             </div>
           </div>
-        </form>
+        </Form>
       </div>
     </div>
   )

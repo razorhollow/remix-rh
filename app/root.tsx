@@ -13,6 +13,8 @@ import {
 import { getUser } from "~/session.server";
 import stylesheet from "~/tailwind.css";
 
+import Navbar from "./components/NavBar";
+
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
   {rel: "stylesheet", href: "https://rsms.me/inter/inter.css"},
@@ -33,6 +35,7 @@ export default function App() {
         <Links />
       </head>
       <body className="h-full">
+        <Navbar />
         <Outlet />
         <ScrollRestoration />
         <Scripts />

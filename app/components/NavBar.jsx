@@ -1,6 +1,9 @@
+import { Link } from '@remix-run/react'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+
+import logoAssetUrl from 'app/assets/razor-hollow-logo.png'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -17,33 +20,33 @@ export default function Navbar() {
                 <div className="flex-shrink-0">
                   <img
                     className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
+                    src={logoAssetUrl}
+                    alt="Razor Hollow Logo"
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                    <a href="#" className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">
-                      Dashboard
-                    </a>
+                    <Link to="/" className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">
+                      Home
+                    </Link>
                     <a
-                      href="#"
+                      href="/about"
                       className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                     >
-                      Team
+                      About 
                     </a>
                     <a
-                      href="#"
+                      href="/portfolio"
                       className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                     >
                       Projects
                     </a>
                     <a
-                      href="#"
+                      href="/contact"
                       className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                     >
-                      Calendar
+                      Contact
                     </a>
                   </div>
                 </div>
@@ -85,7 +88,7 @@ export default function Navbar() {
                         <Menu.Item>
                           {({ active }) => (
                             <a
-                              href="#"
+                              href="/profile"
                               className={classNames(
                                 active ? 'bg-gray-100' : '',
                                 'block px-4 py-2 text-sm text-gray-700'
@@ -98,7 +101,7 @@ export default function Navbar() {
                         <Menu.Item>
                           {({ active }) => (
                             <a
-                              href="#"
+                              href="/settings"
                               className={classNames(
                                 active ? 'bg-gray-100' : '',
                                 'block px-4 py-2 text-sm text-gray-700'
@@ -111,7 +114,7 @@ export default function Navbar() {
                         <Menu.Item>
                           {({ active }) => (
                             <a
-                              href="#"
+                              href="signout"
                               className={classNames(
                                 active ? 'bg-gray-100' : '',
                                 'block px-4 py-2 text-sm text-gray-700'
