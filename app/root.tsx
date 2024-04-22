@@ -14,6 +14,7 @@ import { getUser } from "~/session.server";
 import stylesheet from "~/tailwind.css";
 
 import Navbar from "./components/NavBar";
+import Footer from "./components/Footer"
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -40,6 +41,7 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+        <Footer />
       </body>
     </html>
   );
