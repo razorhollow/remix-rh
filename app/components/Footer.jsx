@@ -87,7 +87,7 @@ import { footerNavigation as navigation } from '../navigation'
         </h2>
         <div className="mx-auto max-w-7xl px-6 pb-8 pt-20 sm:pt-24 lg:px-8 lg:pt-32">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-            <div className="grid grid-cols-2 gap-8 xl:col-span-2">
+            <div className="grid grid-cols-2 gap-6 xl:col-span-2">
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
                   <h3 className="text-sm font-semibold leading-6 text-white">Solutions</h3>

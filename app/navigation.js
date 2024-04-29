@@ -15,8 +15,8 @@ const mainNavigation = [
     company: [
         { name: 'About', href: '#' },
         { name: 'Blog', href: '#'},
-        { name: 'Collaborate With Us', href: '#'},
-        { name: 'Privacy Policy'}
+        { name: 'Contact', href: '/contact'},
+        { name: 'Legal'}
     ],
     social: [
       {

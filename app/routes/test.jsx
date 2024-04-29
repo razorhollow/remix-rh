@@ -1,9 +1,11 @@
-import NavBar2 from '../components/NavBar2'
+import NavBar2 from '../components/NavBar'
 
 export default function Test() {
   return (
     <div>
-      <NavBar2 />
+      this is only a test
     </div>
   );
 }
+
+
