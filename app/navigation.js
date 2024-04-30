@@ -1,7 +1,7 @@
 const mainNavigation = [
     { name: 'Home', href: '/', icon: 'home' },
     { name: 'About', href: '/about', icon: 'info' },
-    { name: 'Projects', href: '/projects', icon: 'briefcase' },
+    { name: 'Services', href: '/services', icon: 'briefcase' },
     { name: 'Contact', href: '/contact', icon: 'mail' },
   ];
   
