@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Website Development",
+    "icon": "code", 
+    "slug": "website-development",
+    "headline": "Ea dolore ea esse occaecat.", 
+    "image": "/assets/replaceme.jpg",
+    "description": "Officia voluptate eu exercitation nostrud commodo aute excepteur ad cupidatat enim. Incididunt non cillum pariatur ex laboris nulla. Do Lorem in laborum cupidatat commodo ad amet veniam. Ad dolor est do laborum. Id anim irure in ut sit aute velit ex ut ea irure labore cupidatat. Aute ea sint est labore."
+  },
+  {
+    "name": "Video Production",
+    "icon": "video", 
+    "slug": "video-production",
+    "headline": "Ea dolore ea esse occaecat.", 
+    "image": "/assets/replaceme.jpg",
+    "description": "Officia voluptate eu exercitation nostrud commodo aute excepteur ad cupidatat enim. Incididunt non cillum pariatur ex laboris nulla. Do Lorem in laborum cupidatat commodo ad amet veniam. Ad dolor est do laborum. Id anim irure in ut sit aute velit ex ut ea irure labore cupidatat. Aute ea sint est labore."
+  },
+  {
+    "name": "Photography",
+    "icon": "photography", 
+    "slug": "photography",
+    "headline": "Ea dolore ea esse occaecat.", 
+    "image": "/images/photography.webp",
+    "description": "Officia voluptate eu exercitation nostrud commodo aute excepteur ad cupidatat enim. Incididunt non cillum pariatur ex laboris nulla. Do Lorem in laborum cupidatat commodo ad amet veniam. Ad dolor est do laborum. Id anim irure in ut sit aute velit ex ut ea irure labore cupidatat. Aute ea sint est labore."
+  },
+  {
+    "name": "Marketing Strategy",
+    "icon": "marketing", 
+    "slug": "marketing-strategy",
+    "headline": "Ea dolore ea esse occaecat.", 
+    "image": "/assets/replaceme.jpg",
+    "description": "Officia voluptate eu exercitation nostrud commodo aute excepteur ad cupidatat enim. Incididunt non cillum pariatur ex laboris nulla. Do Lorem in laborum cupidatat commodo ad amet veniam. Ad dolor est do laborum. Id anim irure in ut sit aute velit ex ut ea irure labore cupidatat. Aute ea sint est labore."
+  }
+]
