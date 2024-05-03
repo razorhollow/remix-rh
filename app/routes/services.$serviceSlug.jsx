@@ -28,9 +28,9 @@ export default function ServiceDetail() {
             {service.name}
           </motion.h1>
       </div>
-      <div className='p-8' dangerouslySetInnerHTML={{ __html: service.description }}>
+      {/* <div className='p-8' dangerouslySetInnerHTML={{ __html: service.description }}>
         <p>{service.description}</p>
-      </div>
+      </div> */}
     </div>
   );
 }

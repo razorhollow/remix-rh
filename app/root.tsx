@@ -1,5 +1,5 @@
 import { cssBundleHref } from "@remix-run/css-bundle";
-import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
+import type { LinksFunction, LoaderFunctionArgs, ActionFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import {
   Links,
@@ -8,13 +8,14 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useActionData
 } from "@remix-run/react";
 
 import { getUser } from "~/session.server";
 import stylesheet from "~/tailwind.css";
 
-import Navbar from "./components/NavBar";
 import Footer from "./components/Footer"
+import Navbar from "./components/NavBar";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -26,7 +27,15 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   return json({ user: await getUser(request) });
 };
 
+export const action = async ({request}: ActionFunctionArgs) => {
+  const formData = await request.formData()
+  const email = formData.get('email-address')
+  console.log(`${email} successfully added to the DB`)
+  return json({ success: true })
+}
+
 export default function App() {
+  const actionData = useActionData()
   return (
     <html lang="en" className="h-full">
       <head>
@@ -41,7 +50,7 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
-        <Footer />
+        <Footer actionData={actionData}/>
       </body>
     </html>
   );
