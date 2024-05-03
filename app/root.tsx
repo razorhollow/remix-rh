@@ -11,11 +11,13 @@ import {
   useActionData
 } from "@remix-run/react";
 
+
 import { getUser } from "~/session.server";
 import stylesheet from "~/tailwind.css";
 
 import Footer from "./components/Footer"
 import Navbar from "./components/NavBar";
+import { prisma } from "./db.server";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -29,9 +31,29 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 
 export const action = async ({request}: ActionFunctionArgs) => {
   const formData = await request.formData()
-  const email = formData.get('email-address')
-  console.log(`${email} successfully added to the DB`)
-  return json({ success: true })
+  const email = formData.get('email-address') as string
+
+  //check for existing subscriber
+  const exists = await prisma.subscriber.findUnique({
+    where: {
+      email
+    }
+  })
+
+  if (exists) {
+    return json({ sucess: false, message: "Looks like you're already on the list!"})
+  }
+  
+  try {
+    await prisma.subscriber.create({
+      data: {
+        email,
+      }
+    })
+    return json({ success: true, message: "Thanks for signing up! Welcome to the pack" })
+  } catch (error) {
+    return json({ success: false, message: "Failed to subscribe. Please try again."})
+  }
 }
 
 export default function App() {
