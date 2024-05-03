@@ -47,7 +47,7 @@ export default function HeroSection() {
               >
                 Get started
               </Link>
-              <Link to="#" className="text-sm font-semibold leading-6 text-white">
+              <Link to="services" className="text-sm font-semibold leading-6 text-white">
                 Learn more <span aria-hidden="true">→</span>
               </Link>
             </div>
