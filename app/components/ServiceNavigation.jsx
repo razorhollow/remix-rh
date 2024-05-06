@@ -18,7 +18,7 @@ export default function NavigationTabs() {
           className="block w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
           onChange={(e) => {
             const selectedService = services.find(service => service.name === e.target.value);
-            window.location.href = `./${selectedService.slug}`;
+            window.location.href = `/services/${selectedService.slug}`;
           }}
         >
           {services.map((service) => (
