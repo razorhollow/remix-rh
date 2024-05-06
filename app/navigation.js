@@ -7,8 +7,8 @@ const mainNavigation = [
   
   const footerNavigation = {
     solutions: [
-        {name: 'Video Production', href: 'services/website-production'},
-        {name: 'Full Stack Web Development', href: 'services/website development'},
+        {name: 'Video Production', href: '/services/website-production'},
+        {name: 'Full Stack Web Development', href: '/services/web-development'},
         {name: 'Marketing Strategy', href: '/services/marketing-strategy'},
         {name: 'Photography', href: '/services/photography'},
     ],

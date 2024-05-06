@@ -28,9 +28,10 @@ export default function ServiceDetail() {
             {service.name}
           </motion.h1>
       </div>
-      {/* <div className='p-8' dangerouslySetInnerHTML={{ __html: service.description }}>
-        <p>{service.description}</p>
-      </div> */}
+      <div className=' w-full p-8 flex flex-col items-center justify-center' >
+        <h2 className='text-3xl font-bold tracking-tight sm:text-5xl my-14 pl-4 py-2 border-solid border-l-4 border-pine' dangerouslySetInnerHTML={{ __html: marked.parse(service.headline) }}></h2>
+        <p className='max-w-[750px]' dangerouslySetInnerHTML={{ __html: marked.parse(service.description) }}></p>
+      </div>
     </div>
   );
 }
