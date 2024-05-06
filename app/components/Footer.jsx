@@ -115,7 +115,7 @@ import { footerNavigation as navigation } from '../navigation'
           <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 md:flex md:items-center md:justify-between lg:mt-24">
             <div className="flex space-x-6 md:order-2">
               {navigation.social.map((item) => (
-                <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
+                <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400" target="_blank" rel="noopener noreferrer">
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-6 w-6" aria-hidden="true" />
                 </a>
