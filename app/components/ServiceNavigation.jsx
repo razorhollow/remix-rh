@@ -15,12 +15,14 @@ export default function NavigationTabs() {
         <select
           id="tabs"
           name="tabs"
-          className="block w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+          className="block text-center font-semibold w-full h-16 rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+          defaultValue=""
           onChange={(e) => {
             const selectedService = services.find(service => service.name === e.target.value);
             window.location.href = `/services/${selectedService.slug}`;
           }}
         >
+          <option value="" disabled>Select a service</option>
           {services.map((service) => (
             <option key={service.name}>{service.name}</option>
           ))}
