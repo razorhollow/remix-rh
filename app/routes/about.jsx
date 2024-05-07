@@ -3,11 +3,12 @@ import shedHuntingUrl from '../assets/shed-hunting.jpg'
 import steelheadUrl from '../assets/steelhead.jpg'
 import elkHuntinUrl from '../assets/elk-hunting.jpg'
 import duckHuntinUrl from '../assets/duck-hunting.jpg'
+import beginImgUrl from '../assets/begin.webp'
 
 const stats = [
-  { label: 'Transactions every 24 hours', value: '44 million' },
-  { label: 'Assets under holding', value: '$119 trillion' },
-  { label: 'New users annually', value: '46,000' },
+  { label: 'Lines of code written', value: '4 million' },
+  { label: 'Video impressions', value: '35,600' },
+  { label: 'Images captured', value: '150 TB' },
 ]
 const values = [
   {
@@ -103,7 +104,7 @@ export default function AboutPage() {
             aria-hidden="true"
           >
             <div
-              className="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-pine to-goldenrod opacity-30"
+              className="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#2CDB2C] to-pine opacity-30"
               style={{
                 clipPath:
                   'polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)',
@@ -193,21 +194,11 @@ export default function AboutPage() {
             <div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
               <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
                 <p className="text-xl leading-8 text-gray-600">
-                  Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam
-                  eget aliquam. Quisque id at vitae feugiat egestas ac. Diam nulla orci at in viverra scelerisque eget.
-                  Eleifend egestas fringilla sapien.
+                  Our mission is to empower outdoor professionals by leveraging cutting-edge technology and authentic storytelling. Through our unique blend of web development, video production, and digital marketing expertise, we are dedicated to helping hunting and fishing guides, lodge owners, and outdoor product companies craft successful careers around their passions. 
                 </p>
                 <div className="mt-10 max-w-xl text-base leading-7 text-gray-700">
                   <p>
-                    Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed
-                    amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius
-                    sit neque erat velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim.
-                    Mattis mauris semper sed amet vitae sed turpis id.
-                  </p>
-                  <p className="mt-10">
-                    Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie
-                    auctor fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et
-                    ultrices hac adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.
+                    We commit to providing personalized, innovative solutions that resonate with their distinct needs, ensuring their stories are heard, their brands grow, and their outdoor dreams thrive in the digital age.
                   </p>
                 </div>
               </div>
@@ -228,8 +219,8 @@ export default function AboutPage() {
         {/* Image section */}
         <div className="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
           <img
-            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
-            alt=""
+            src={beginImgUrl}
+            alt="a man looking into the forest"
             className="aspect-[5/2] w-full object-cover xl:rounded-3xl"
           />
         </div>
