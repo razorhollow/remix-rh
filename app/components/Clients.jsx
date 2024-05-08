@@ -1,3 +1,4 @@
+import { Link } from '@remix-run/react'
 import { motion, stagger } from 'framer-motion'
 
 import zla from 'app/assets/logos/zero-limit-adventures.png'
@@ -19,15 +20,15 @@ export default function Clients() {
               From rugged terrains to digital domains, our journey is marked by collaborations with some of the most dynamic and passionate brands and pros in the outdoor space.
             </p>
             <div className="mt-8 flex items-center gap-x-6">
-              <a
-                href="#"
-                className="rounded-md bg-pine px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              <Link
+                to="about"
+                className="rounded-md bg-pine px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:text-gray-200 hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
               >
-                Create account
-              </a>
-              <a href="#" className="text-sm font-semibold text-gray-900">
+                Our Why
+              </Link>
+              <Link to="contact" className="text-sm font-semibold text-gray-900">
                 Contact us <span aria-hidden="true">&rarr;</span>
-              </a>
+              </Link>
             </div>
           </div>
           <motion.div 
