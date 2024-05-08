@@ -12,34 +12,34 @@ const stats = [
 ]
 const values = [
   {
-    name: 'Be world-class',
+    name: 'Have a why',
     description:
-      'Aut illo quae. Ut et harum ea animi natus. Culpa maiores et sed sint et magnam exercitationem quia. Ullam voluptas nihil vitae dicta molestiae et. Aliquid velit porro vero.',
+      "Our driving force is our commitment to helping outdoor enthusiasts and professionals leverage technology to build their dream careers. This mission was inspired by our founder's passion for the outdoors and his recognition of the transformative power of digital tools. We help our clients not just to succeed but to thrive by aligning their passions with purposeful and powerful digital solutions.",
   },
   {
-    name: 'Share everything you know',
+    name: 'Always be learning',
     description:
-      'Mollitia delectus a omnis. Quae velit aliquid. Qui nulla maxime adipisci illo id molestiae. Cumque cum ut minus rerum architecto magnam consequatur. Quia quaerat minima.',
+      'We embrace the philosophy that learning is an endless journey. In the ever-evolving landscape of technology and outdoor adventures, staying curious and continuously seeking knowledge not only enhances our services but also enriches our personal lives and the lives of those we serve. We encourage our team and our clients to always be open to new ideas and innovations, ensuring that we remain at the forefront of digital creativity and efficiency.',
   },
   {
-    name: 'Always learning',
+    name: 'Do the right thing',
     description:
-      'Aut repellendus et officiis dolor possimus. Deserunt velit quasi sunt fuga error labore quia ipsum. Commodi autem voluptatem nam. Quos voluptatem totam.',
+      "Integrity is the cornerstone of Razor Hollow. We believe in doing the right thing, even when no one is watching. This value guides our interactions with clients, partners, and each other. Whether it's transparent communication, honest service delivery, or responsible business practices, our commitment to integrity ensures we build trust and maintain long-lasting relationships in the outdoor and tech industries.",
   },
   {
-    name: 'Be supportive',
+    name: 'Go the extra mile',
     description:
-      'Magnam provident veritatis odit. Vitae eligendi repellat non. Eum fugit impedit veritatis ducimus. Non qui aspernatur laudantium modi. Praesentium rerum error deserunt harum.',
+      "Going the extra mile isn't just a cliche - it's essential to reaching our potential. Putting in that little bit more effort for friends, coworkers, clients, and yourself can have far-reaching impacts beyond what you may think. It could be as simple as lending a listening ear to someone going through tough times or investing those few remaining minutes after work into improving yourself; whatever shape this takes, always strive to leave your mark by making sure that people remember the value you bring them!",
   },
   {
-    name: 'Take responsibility',
+    name: 'Anything worth doing is worth doing well',
     description:
-      'Sit minus expedita quam in ullam molestiae dignissimos in harum. Tenetur dolorem iure. Non nesciunt dolorem veniam necessitatibus laboriosam voluptas perspiciatis error.',
+      "We hold ourselves to a standard of excellence in everything we undertake. We believe that anything worth doing not only deserves effort but our best effort. This commitment to quality reflects in our web development, video production, and all services we provide. By consistently delivering work we're proud of, we help elevate our clients' brands to their highest potential.",
   },
   {
-    name: 'Enjoy downtime',
+    name: 'Move with purpose',
     description:
-      'Ipsa in earum deserunt aut. Quos minus aut animi et soluta. Ipsum dicta ut quia eius. Possimus reprehenderit iste aspernatur ut est velit consequatur distinctio.',
+    "Inspired by the ethos of our founder's father, we operate with a sense of urgency and purpose. This value is about more than speed; it’s about deliberate, thoughtful action in everything we do. From the pace at which we tackle projects to the swift, purpose-driven approach we apply in problem-solving, moving with purpose is integral to our success and that of our clients.",
   },
 ]
 const team = [
@@ -197,9 +197,6 @@ export default function AboutPage() {
                   Our mission is to empower outdoor professionals by leveraging cutting-edge technology and authentic storytelling. Through our unique blend of web development, video production, and digital marketing expertise, we are dedicated to helping hunting and fishing guides, lodge owners, and outdoor product companies craft successful careers around their passions. 
                 </p>
                 <div className="mt-10 max-w-xl text-base leading-7 text-gray-700">
-                  <p>
-                    We commit to providing personalized, innovative solutions that resonate with their distinct needs, ensuring their stories are heard, their brands grow, and their outdoor dreams thrive in the digital age.
-                  </p>
                 </div>
               </div>
               <div className="lg:flex lg:flex-auto lg:justify-center">
@@ -226,12 +223,11 @@ export default function AboutPage() {
         </div>
 
         {/* Values section */}
-        <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
+        <div className="mx-auto mt-32 mb-16 max-w-7xl px-6 sm:mt-40 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our values</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our core values</h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
-              accusamus quisquam.
+            our core values are more than just words—they are the principles that guide every decision and action we take. From pioneering cutting-edge solutions in the outdoor industry to ensuring every client interaction is rooted in integrity, our values shape our commitment to excellence and drive our mission to empower outdoor professionals through innovative technology.
             </p>
           </div>
           <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -244,97 +240,9 @@ export default function AboutPage() {
           </dl>
         </div>
 
-        {/* Logo cloud */}
-        <div className="relative isolate -z-10 mt-32 sm:mt-48">
-          <div className="absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 justify-center overflow-hidden [mask-image:radial-gradient(50%_45%_at_50%_55%,white,transparent)]">
-            <svg className="h-[40rem] w-[80rem] flex-none stroke-gray-200" aria-hidden="true">
-              <defs>
-                <pattern
-                  id="e9033f3e-f665-41a6-84ef-756f6778e6fe"
-                  width={200}
-                  height={200}
-                  x="50%"
-                  y="50%"
-                  patternUnits="userSpaceOnUse"
-                  patternTransform="translate(-100 0)"
-                >
-                  <path d="M.5 200V.5H200" fill="none" />
-                </pattern>
-              </defs>
-              <svg x="50%" y="50%" className="overflow-visible fill-gray-50">
-                <path d="M-300 0h201v201h-201Z M300 200h201v201h-201Z" strokeWidth={0} />
-              </svg>
-              <rect width="100%" height="100%" strokeWidth={0} fill="url(#e9033f3e-f665-41a6-84ef-756f6778e6fe)" />
-            </svg>
-          </div>
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <h2 className="text-center text-lg font-semibold leading-8 text-gray-900">
-              Trusted by the world’s most innovative teams
-            </h2>
-            <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-              <img
-                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                src="https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg"
-                alt="Transistor"
-                width={158}
-                height={48}
-              />
-              <img
-                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                src="https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg"
-                alt="Reform"
-                width={158}
-                height={48}
-              />
-              <img
-                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                src="https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg"
-                alt="Tuple"
-                width={158}
-                height={48}
-              />
-              <img
-                className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-                src="https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg"
-                alt="SavvyCal"
-                width={158}
-                height={48}
-              />
-              <img
-                className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-                src="https://tailwindui.com/img/logos/158x48/statamic-logo-gray-900.svg"
-                alt="Statamic"
-                width={158}
-                height={48}
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Team section */}
-        <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our team</h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Sit facilis neque ab nulla vel. Cum eos in laudantium. Temporibus eos totam in dolorum. Nemo vel facere
-              repellendus ut eos dolores similique.
-            </p>
-          </div>
-          <ul
-            className="mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6"
-          >
-            {team.map((person) => (
-              <li key={person.name}>
-                <img className="mx-auto h-24 w-24 rounded-full" src={person.imageUrl} alt="" />
-                <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name}</h3>
-                <p className="text-sm leading-6 text-gray-600">{person.role}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
 
         {/* Blog section */}
-        <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
+        {/* <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">From the blog</h2>
             <p className="mt-2 text-lg leading-8 text-gray-600">
@@ -374,33 +282,7 @@ export default function AboutPage() {
               </article>
             ))}
           </div>
-        </div>
+        </div> */}
       </main> 
   );
 }
-{/* <div className="bg-gray-800 text-white p-6"> */}
-    //   <div className="container mx-auto px-4 py-8">
-    //     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-    //       <div>
-    //         <img src={assetImgURL} alt="Rob Reynolds" className="rounded-lg shadow-lg"/>
-    //       </div>
-    //       <div>
-    //         <p className="text-lg md:text-xl leading-relaxed">
-    //           <span className="text-yellow-400 font-bold">Hi there, I'm Rob Reynolds</span> - an experienced outdoor photographer and filmmaker who spent the last 10 years in the outdoor industry. My peers often dub me the <span className="text-green-400 italic">"Backwoods Techie"</span>, and rightfully so, as for a decade, I've been assisting my clients to fill their books with business, creating a compelling online presence through stunning visuals and fully-functional, custom websites.
-    //         </p>
-    //         <p className="mt-4 text-lg md:text-xl leading-relaxed">
-    //           But why do I do what I do? Because I've been where you are. I know how daunting it can be to try and market your outdoor business, with no clear starting point and potential customers slipping away due to underwhelming visuals. All the while, wasting time and precious resources.
-    //         </p>
-    //         <p className="mt-4 text-lg md:text-xl leading-relaxed">
-    //           I started off as a struggling small business owner, hoping that clients would somehow find me through my minimal marketing efforts. It was back when social media was still a budding concept, and online video was unheard of. I had no choice but to figure things out on my own. I taught myself how to build websites and capture great photos, which eventually led me to start a video production and photography company.
-    //         </p>
-    //         <p className="mt-4 text-lg md:text-xl leading-relaxed">
-    //           That's when I discovered the true power of high-quality visuals and how they can transform a business. A compelling image is not just an image; it's a magnet that draws customers in.
-    //         </p>
-    //         <p className="mt-4 text-lg md:text-xl leading-relaxed">
-    //           I understand that having a robust online presence with captivating visuals is crucial for your success in the outdoor industry. I understand this challenge very well and that's why I'm dedicated to helping you elevate your brand, connect with your audience visually, and attract more clients effortlessly.
-    //         </p>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
