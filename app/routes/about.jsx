@@ -42,33 +42,7 @@ const values = [
     "Inspired by the ethos of our founder's father, we operate with a sense of urgency and purpose. This value is about more than speed; it’s about deliberate, thoughtful action in everything we do. From the pace at which we tackle projects to the swift, purpose-driven approach we apply in problem-solving, moving with purpose is integral to our success and that of our clients.",
   },
 ]
-const team = [
-  {
-    name: 'Michael Foster',
-    role: 'Co-Founder / CTO',
-    imageUrl:
-      'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-  },
-  // More people...
-]
-const blogPosts = [
-  {
-    id: 1,
-    title: 'Vel expedita assumenda placeat aut nisi optio voluptates quas',
-    href: '#',
-    description:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    author: {
-      name: 'Michael Foster',
-      imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
-]
+
 
 export default function AboutPage() {
   return (
@@ -116,22 +90,22 @@ export default function AboutPage() {
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
                   <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                  Hi there, I'm Rob Reynolds
+                  Hi there, I&apos;m Rob Reynolds
                   </h1>
                   <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-                  I'm an experienced outdoor photographer, filmmaker, and guide who spent the last 10 years in the outdoor industry. My peers often dub me the <span className="text-pine italic">"Backwoods Techie"</span>, and rightfully so, as for a decade, I've been assisting my clients to fill their books with business, creating a compelling online presence through stunning visuals and fully-functional, custom websites.
+                  I&apos;m an experienced outdoor photographer, filmmaker, and guide who spent the last 10 years in the outdoor industry. My peers often dub me the <span className="text-pine italic">&quot;Backwoods Techie&quot;</span>, and rightfully so, as for a decade, I&apos;ve been assisting my clients to fill their books with business, creating a compelling online presence through stunning visuals and fully-functional, custom websites.
                   </p>
                   <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-                  <span className="mt-4 text-lg md:text-xl leading-relaxed text-gray-900">But why do I do what I do?</span> Because I've been where you are. I know how daunting it can be to try and market your outdoor business, with no clear starting point and potential customers slipping away due to underwhelming visuals. All the while, wasting time and precious resources.
+                  <span className="mt-4 text-lg md:text-xl leading-relaxed text-gray-900">But why do I do what I do?</span> Because I&apos;ve been where you are. I know how daunting it can be to try and market your outdoor business, with no clear starting point and potential customers slipping away due to underwhelming visuals. All the while, wasting time and precious resources.
                   </p>
                   <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
                     <span className="mt-4 text-lg md:text-xl leading-relaxed text-gray-900">I started off as a struggling small business owner,</span> hoping that clients would somehow find me through my minimal marketing efforts. It was back when social media was still a budding concept, and online video was unheard of. I had no choice but to figure things out on my own. I taught myself how to build websites and capture great photos, which eventually led me to start a video production and photography company.
                   </p>
                   <p className="mt-4 text-lg md:text-xl leading-relaxed">
-                    That's when I discovered the true power of high-quality visuals and how they can transform a business. A compelling image is not just an image; it's a magnet that draws customers in.
+                    That&apos;s when I discovered the true power of high-quality visuals and how they can transform a business. A compelling image is not just an image; it&apos;s a magnet that draws customers in.
                   </p>
                   <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-                    I understand that having a robust online presence with captivating visuals is crucial for your success in the outdoor industry. I understand this challenge very well and that's why I'm dedicated to helping you elevate your brand, connect with your audience visually, and attract more clients effortlessly.
+                    I understand that having a robust online presence with captivating visuals is crucial for your success in the outdoor industry. I understand this challenge very well and that&apos;s why I&apos;m dedicated to helping you elevate your brand, connect with your audience visually, and attract more clients effortlessly.
                   </p>
                 </div>
                 <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
