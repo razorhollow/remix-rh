@@ -1,5 +1,5 @@
 import { Link } from '@remix-run/react'
-import { motion, stagger } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 import zla from 'app/assets/logos/zero-limit-adventures.png'
 import foxHollow from 'app/assets/logos/Fox-Hollow.png'
