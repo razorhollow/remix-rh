@@ -12,7 +12,7 @@ entrypoint = "sh"
 
 [mounts]
 source = "data"
-destination = "/data"
+destination = "/data/sqlite.db"
 
 [[services]]
 internal_port = 8_080
