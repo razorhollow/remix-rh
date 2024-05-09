@@ -1,9 +1,15 @@
-import {json, Form} from '@remix-run/react'
+/* eslint-disable react/prop-types */
+import { Form } from '@remix-run/react'
 
 import { footerNavigation as navigation } from '../navigation'
 
+import PropTypes from 'prop-types'
 
-
+FooterComponent.PropTypes = {
+  actionData: PropTypes.shape({
+    email: PropTypes.string
+  })
+}
   
   export default function FooterComponent({ actionData }) {
 
@@ -129,4 +135,6 @@ import { footerNavigation as navigation } from '../navigation'
       </footer>
     )
   }
+
+ 
   

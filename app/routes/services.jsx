@@ -1,4 +1,4 @@
-import { Outlet, NavLink } from '@remix-run/react'
+import { Outlet } from '@remix-run/react'
 
 import ServiceNavigation from '../components/ServiceNavigation'
 
