@@ -21,6 +21,7 @@ import { prisma } from "./db.server";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
+  { rel: "icon", href: "/favicon.png", type: "image/png"},
   {rel: "stylesheet", href: "https://rsms.me/inter/inter.css"},
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
