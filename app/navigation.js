@@ -7,16 +7,16 @@ const mainNavigation = [
   
   const footerNavigation = {
     solutions: [
-        {name: 'Video Production', href: '/services/website-production'},
         {name: 'Full Stack Web Development', href: '/services/web-development'},
+        {name: 'Video Production', href: '/services/video-production'},
         {name: 'Marketing Strategy', href: '/services/marketing-strategy'},
         {name: 'Photography', href: '/services/photography'},
     ],
     company: [
-        { name: 'About', href: '#' },
-        { name: 'Blog', href: '#'},
+        { name: 'About', href: '/about' },
+        { name: 'Blog', href: '/about'},
         { name: 'Contact', href: '/contact'},
-        { name: 'Legal'}
+        { name: 'Legal', href: '/legal'}
     ],
     social: [
       {

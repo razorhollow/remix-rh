@@ -1,8 +1,18 @@
+import { PlusCircleIcon } from '@heroicons/react/24/outline';
 import { Link } from "@remix-run/react";
-import { PlusCircleIcon } from '@heroicons/react/24/outline'
+
 import iconMap from "../utils/iconMap";
 
-const ServiceCard = ({ service }) => {
+interface ServiceProps {
+  service: {
+    icon: string;
+    name: string;
+    headline: string;
+    slug: string;
+  };
+}
+
+const ServiceCard: React.FC<ServiceProps> = ({ service }) => {
   console.log('Service icon key:', service.icon); // This will show what icon key is being used
   const Icon = iconMap[service.icon] || null;
   console.log('Resolved Icon:', Icon); // This will show what component is resolved

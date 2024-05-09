@@ -25,6 +25,12 @@ module.exports = {
   extends: ["eslint:recommended"],
 
   overrides: [
+    {
+      "files": ["*.jsx"],  // This targets only .jsx files
+      "rules": {
+        "react/prop-types": "off"  // Disables PropTypes validation
+      }
+    },
     // React
     {
       files: ["**/*.{js,jsx,ts,tsx}"],
@@ -53,6 +59,7 @@ module.exports = {
         ],
       },
     },
+    
 
     // Typescript
     {
