@@ -48,7 +48,7 @@ export default function Legal() {
             <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. Changes are effective when they are posted on this page.</p>
 
             <h1 className="text-2xl font-bold mb-4 mt-8">Conditions</h1>
-            <p>By using our website, you are considered to have accepted the terms contained within these Terms of Service and Privacy Policy. If you have any questions about these, please contact us at [insert contact information].</p>
+            <p>By using our website, you are considered to have accepted the terms contained within these Terms of Service and Privacy Policy. If you have any questions about these, please contact us at rob@razorhollow.com.</p>
         </div>
     </div>
 </main>
