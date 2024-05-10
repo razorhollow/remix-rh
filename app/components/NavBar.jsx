@@ -1,16 +1,18 @@
 import { Fragment } from 'react'
-import { Link } from '@remix-run/react'
+import { Form, Link } from '@remix-run/react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import logoAssetUrl from 'app/assets/razor-hollow-logo.png'
 import { mainNavigation as navigation } from 'app/navigation'
+import { useOptionalUser } from '~/utils'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function NavBar() {
+  const user = useOptionalUser()
   return (
     <Disclosure as="nav" className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-600">
       {({ open }) => (
@@ -79,36 +81,31 @@ export default function NavBar() {
                     leaveTo="transform opacity-0 scale-95"
                   >
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      { user ? (
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Form action="/logout" method="post">
+                          <button
+                            type="submit"
+                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                          >
+                            Logout
+                          </button>
+                        </Form>
+                        )}
+                      </Menu.Item>
+                      ):(
                       <Menu.Item>
                         {({ active }) => (
                           <Link
-                            to="#"
+                            to="/login"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
-                            Your Profile
+                            Sign In
                           </Link>
                         )}
                       </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            to="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Settings
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            onTouchStartCapture="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Sign out
-                          </Link>
-                        )}
-                      </Menu.Item>
+                      )}
                     </Menu.Items>
                   </Transition>
                 </Menu>
