@@ -3,33 +3,33 @@ import { Form } from '@remix-run/react';
 import { Resend } from 'resend';
 import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 
-// const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = new Resend(process.env.RESEND_API_KEY)
 
-// export const action = async ({ request }) => {
-//   const formData = await request.formData();
-//   const firstName = formData.get('first-name')
-//   const lastName = formData.get('last-name')
-//   const email = formData.get('email')
-//   const phone = formData.get('phone-number')
-//   const message = formData.get('message')
+export const action = async ({ request }) => {
+  const formData = await request.formData();
+  const firstName = formData.get('first-name')
+  const lastName = formData.get('last-name')
+  const email = formData.get('email')
+  const phone = formData.get('phone-number')
+  const message = formData.get('message')
 
-//   const { error } = await resend.emails.send({
-//     from: 'Acme <onboarding@resend.dev>',
-//     to: ['rob@razorhollow.com'],
-//     subject: 'Contact Form Submission',
-//     html: `
-//             <p>${message}</p>
-//             <p>sent by ${firstName} ${lastName}, phone: ${phone}</p><p>email: ${email}</p>
-//           `
-//   })
+  const { error } = await resend.emails.send({
+    from: 'Acme <onboarding@resend.dev>',
+    to: ['rob@razorhollow.com'],
+    subject: 'Contact Form Submission',
+    html: `
+            <p>${message}</p>
+            <p>sent by ${firstName} ${lastName}, phone: ${phone}</p><p>email: ${email}</p>
+          `
+  })
 
-//   if(error) {
-//     console.log(error)
-//     return json({ error }, 400)
-//   }
+  if(error) {
+    console.log(error)
+    return json({ error }, 400)
+  }
   
-//   return redirect(`/thanks`);
-// };
+  return redirect(`/thanks`);
+};
 
 export default function Contact() {
   return (
