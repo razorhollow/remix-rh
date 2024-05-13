@@ -2,34 +2,61 @@ import { json, redirect } from '@remix-run/node';
 import { Form } from '@remix-run/react';
 import { Resend } from 'resend';
 import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import { HoneypotInputs } from 'remix-utils/honeypot/react';
+import { SpamError } from 'remix-utils/honeypot/server';
+
+import { honeypot } from "../honeypot.server.mjs"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-export const action = async ({ request }) => {
-  const formData = await request.formData();
-  const firstName = formData.get('first-name')
-  const lastName = formData.get('last-name')
-  const email = formData.get('email')
-  const phone = formData.get('phone-number')
-  const message = formData.get('message')
 
-  const { error } = await resend.emails.send({
-    from: 'Acme <onboarding@resend.dev>',
-    to: ['rob@razorhollow.com'],
-    subject: 'Contact Form Submission',
-    html: `
-            <p>${message}</p>
-            <p>sent by ${firstName} ${lastName}, phone: ${phone}</p><p>email: ${email}</p>
-          `
-  })
+  //honeypot area
 
-  if(error) {
-    console.log(error)
-    return json({ error }, 400)
-  }
-  
-  return redirect(`/thanks`);
-};
+  export async function action({ request }) {
+    let formData = await request.formData();
+    try {
+        honeypot.check(formData);
+    } catch (error) {
+        if (error instanceof SpamError) {
+            console.error('Spam detected from formData:', formData);
+            return new Response(JSON.stringify({
+                status: 'success',
+                message: 'Form submission received.'
+            }), {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+        } else {
+            // Handle other possible errors
+            return json({ error: error.message }, 500);
+        }
+    }
+
+    const firstName = formData.get('first-name');
+    const lastName = formData.get('last-name');
+    const email = formData.get('email');
+    const phone = formData.get('phone-number');
+    const message = formData.get('message');
+
+    const { error: sendError } = await resend.emails.send({
+        from: 'Acme <onboarding@resend.dev>',
+        to: ['rob@razorhollow.com'],
+        subject: 'Contact Form Submission',
+        html: `
+                <p>${message}</p>
+                <p>sent by ${firstName} ${lastName}, phone: ${phone}</p><p>email: ${email}</p>
+              `
+    });
+
+    if (sendError) {
+        console.log(sendError);
+        return json({ error: sendError.message }, 400);
+    }
+
+    return redirect(`/thanks`);
+}
+
 
 export default function Contact() {
   return (
@@ -106,6 +133,7 @@ export default function Contact() {
           <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
+                <HoneypotInputs label="Please leave this field blank" />
                 <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-gray-900">
                   First name
                 </label>
@@ -179,7 +207,7 @@ export default function Contact() {
             <div className="mt-8 flex justify-end">
               <button
                 type="submit"
-                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md bg-goldenrod px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Send message
               </button>

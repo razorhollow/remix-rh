@@ -33,16 +33,21 @@
     "@remix-run/react": "^2.8.1",
     "@remix-run/serve": "^2.8.1",
     "bcryptjs": "^2.4.3",
+    "crypto-js": "^4.2.0",
     "fly": "^4.6.3",
     "framer-motion": "^11.0.22",
+    "intl-parse-accept-language": "^1.0.0",
+    "is-ip": "^5.0.1",
     "isbot": "^3.7.0",
     "marked": "^12.0.2",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-lottie": "^1.2.4",
+    "remix-utils": "^7.6.0",
     "resend": "^3.2.0",
-    "tiny-invariant": "^1.3.1"
+    "tiny-invariant": "^1.3.1",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.2.0",

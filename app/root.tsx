@@ -8,8 +8,10 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useActionData
+  useActionData,
+  useLoaderData
 } from "@remix-run/react";
+import { HoneypotProvider } from "remix-utils/honeypot/react"
 
 
 import { getUser } from "~/session.server";
@@ -18,6 +20,7 @@ import stylesheet from "~/tailwind.css";
 import Footer from "./components/Footer"
 import Navbar from "./components/NavBar";
 import { prisma } from "./db.server";
+import { honeypot } from "./honeypot.server.mjs";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -27,7 +30,7 @@ export const links: LinksFunction = () => [
 ];
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  return json({ user: await getUser(request) });
+  return json({ user: await getUser(request), honeypotInputProps: honeypot.getInputProps() });
 };
 
 export const action = async ({request}: ActionFunctionArgs) => {
@@ -58,6 +61,7 @@ export const action = async ({request}: ActionFunctionArgs) => {
 }
 
 export default function App() {
+  const { user, honeypotInputProps } = useLoaderData();
   const actionData = useActionData()
   return (
     <html lang="en" className="h-full">
@@ -68,12 +72,14 @@ export default function App() {
         <Links />
       </head>
       <body className="h-full">
-        <Navbar />
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
-        <Footer actionData={actionData}/>
+        <HoneypotProvider {...honeypotInputProps}>
+          <Navbar />
+          <Outlet />
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
+          <Footer actionData={actionData}/>
+        </HoneypotProvider>
       </body>
     </html>
   );
