@@ -26,9 +26,9 @@ export default function Clients() {
               >
                 Our Why
               </Link>
-              <Link to="contact" className="text-sm font-semibold text-gray-900">
+              <a href="/contact" className="text-sm font-semibold text-gray-900">
                 Contact us <span aria-hidden="true">&rarr;</span>
-              </Link>
+              </a>
             </div>
           </div>
           <motion.div 

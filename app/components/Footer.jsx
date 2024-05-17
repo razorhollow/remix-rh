@@ -5,7 +5,7 @@ import { footerNavigation as navigation } from '../navigation'
 
 import PropTypes from 'prop-types'
 
-FooterComponent.PropTypes = {
+FooterComponent.propTypes = {
   actionData: PropTypes.shape({
     email: PropTypes.string
   })

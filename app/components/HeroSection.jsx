@@ -41,12 +41,10 @@ export default function HeroSection() {
               Combining the power of story with modern technology to elevate outdoor brands
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link
-                to="contact"
-                className="rounded-md bg-goldenrod px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-amber-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-              >
+              <a
+                href="/contact" className="rounded-md bg-goldenrod px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-amber-300">
                 Get started
-              </Link>
+              </a>
               <Link to="services" className="text-sm font-semibold leading-6 text-white">
                 Learn more <span aria-hidden="true">→</span>
               </Link>
