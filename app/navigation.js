@@ -16,7 +16,8 @@ const mainNavigation = [
         { name: 'About', href: '/about' },
         { name: 'Blog', href: '/about'},
         { name: 'Contact', href: '/contact'},
-        { name: 'Legal', href: '/legal'}
+        { name: 'Legal', href: '/legal'},
+        { name: "Sitemap.xml", href: '/sitemap.xml'}
     ],
     social: [
       {
