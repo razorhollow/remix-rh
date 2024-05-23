@@ -68,6 +68,8 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="description" content="Razor Hollow boosts your outdoor brand with expert web development, compelling video production, and strategic digital marketing tailored for hunting and fishing guides, lodge owners, and outdoor product companies. Elevate your online presence and connect with your audience effectively." />
+        <meta name="keywords" content="outdoor digital marketing, web development for outdoor businesses, video production services, fishing guide marketing, hunting guide websites, outdoor brand promotion, adventure sports SEO, custom web solutions for lodges, outdoor photography services, tech solutions for outdoor industry" />
         <Meta />
         <Links />
       </head>

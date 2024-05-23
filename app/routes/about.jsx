@@ -260,3 +260,9 @@ export default function AboutPage() {
       </main> 
   );
 }
+
+export const meta =() => {
+  return [
+    {title: 'About Us | Razor Hollow'}
+  ]
+}

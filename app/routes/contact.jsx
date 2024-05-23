@@ -218,3 +218,9 @@ export default function Contact() {
     </div>
   )
 }
+
+export const meta =() => {
+  return [
+    {title: 'Contact Us | Razor Hollow'}
+  ]
+}

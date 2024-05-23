@@ -35,3 +35,9 @@ export default function ServiceDetail() {
     </div>
   );
 }
+
+export const meta =({data}) => {
+  return [
+    {title: `${data.name} | Razor Hollow`}
+  ]
+}
