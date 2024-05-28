@@ -43,7 +43,6 @@ const values = [
   },
 ]
 
-
 export default function AboutPage() {
   return (
     <main className="isolate">
@@ -261,8 +260,7 @@ export default function AboutPage() {
   );
 }
 
-export const meta =() => {
-  return [
-    {title: 'About Us | Razor Hollow'}
-  ]
-}
+export const meta = () => [
+  { title: "About Razor Hollow: Our Outdoor Marketing Expertise" },
+  { name: "description", content: "Learn about Razor Hollow's mission to empower outdoor professionals with cutting-edge technology and storytelling. Discover our values and expertise."}
+];

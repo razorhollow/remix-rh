@@ -7,7 +7,10 @@ import HeroSection from 'app/components/HeroSection'
 import USP from 'app/components/USP'
 // import { useOptionalUser } from "~/utils";
 
-export const meta: MetaFunction = () => [{ title: "Razor Hollow" }];
+export const meta: MetaFunction = () => [
+  { title: "Razor Hollow: Outdoor Brand Development & Marketing" },
+  { Name: "description", content: "Razor Hollow: Leading outdoor brand development through web design, marketing strategy, video production, and photography. Elevate your outdoor business with us."}
+];
 
 export default function Index() {
   // const user = useOptionalUser();
