@@ -71,6 +71,17 @@ export default function App() {
         <meta name="keywords" content="outdoor digital marketing, web development for outdoor businesses, video production services, fishing guide marketing, hunting guide websites, outdoor brand promotion, adventure sports SEO, custom web solutions for lodges, outdoor photography services, tech solutions for outdoor industry" />
         <Meta />
         <Links />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GNLM46PDP8"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-GNLM46PDP8');
+            `,
+          }}
+        />
       </head>
       <body className="h-full">
         <HoneypotProvider {...honeypotInputProps}>
