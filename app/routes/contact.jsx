@@ -36,7 +36,7 @@ export async function action({ request }) {
     const message = formData.get('message');
 
     const { error: sendError } = await resend.emails.send({
-        from: 'Acme <onboarding@resend.dev>',
+        from: 'New Form Submission <onboarding@alerts.razorhollow.com>',
         to: ['rob@razorhollow.com'],
         subject: 'Contact Form Submission',
         html: `
