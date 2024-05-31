@@ -7,12 +7,9 @@ import { SpamError } from 'remix-utils/honeypot/server';
 
 import { honeypot } from "../honeypot.server.mjs"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
 
-
-  //honeypot area
-
-  export async function action({ request }) {
+export async function action({ request }) {
+    const resend = new Resend(process.env.RESEND_API_KEY)
     let formData = await request.formData();
     try {
         honeypot.check(formData);
@@ -28,7 +25,6 @@ const resend = new Resend(process.env.RESEND_API_KEY)
                 }
             });
         } else {
-            // Handle other possible errors
             return json({ error: error.message }, 500);
         }
     }
@@ -56,7 +52,6 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 
     return redirect(`/thanks`);
 }
-
 
 export default function Contact() {
   return (
@@ -221,9 +216,9 @@ export default function Contact() {
   )
 }
 
-export const meta =() => {
+export const meta = () => {
   return [
-    {title: 'Contact Razor Hollow | Outdoor Marketing Experts'},
-    {name: "description", content: "Get in touch with Razor Hollow. Reach out for inquiries about our outdoor marketing services and discover how we can help your business succeed."}
+    { title: 'Contact Razor Hollow | Outdoor Marketing Experts' },
+    { name: "description", content: "Get in touch with Razor Hollow. Reach out for inquiries about our outdoor marketing services and discover how we can help your business succeed." }
   ]
 }
