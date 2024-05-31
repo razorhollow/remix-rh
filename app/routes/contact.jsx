@@ -103,8 +103,6 @@ export default function Contact() {
                   <BuildingOffice2Icon className="h-7 w-6 text-gray-400" aria-hidden="true" />
                 </dt>
                 <dd>
-                  214 Reasor Hollow Rd
-                  <br />
                   Big Flats, NY 14814
                 </dd>
               </div>
@@ -126,7 +124,7 @@ export default function Contact() {
                 </dt>
                 <dd>
                   <a className="hover:text-gray-900" href="mailto:rob@razorhollow.com">
-                    rob@razorhollow.com
+                    hello@razorhollow.com
                   </a>
                 </dd>
               </div>
