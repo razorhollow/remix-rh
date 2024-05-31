@@ -83,7 +83,7 @@ export default function App() {
           }}
         />
       </head>
-      <body className="h-full">
+      <body className="absolute h-full w-full p-0">
         <HoneypotProvider {...honeypotInputProps}>
           <Navbar />
           <Outlet />

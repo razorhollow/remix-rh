@@ -8,11 +8,11 @@ export default function USP() {
   const y = useTransform(scrollYProgress, [0, 1], [0, -200])
 
   return (
-    <div className="max-h-[70vh] overflow-hidden" id='usp'>
+    <div className="w-full overflow-hidden" id='usp'>
       <div className="relative bg-gray-900/80 text-white px-6 py-24 sm:py-32 lg:px-8">
         <motion.div 
           style={{ y, backgroundImage: `url(${imageAssetUrl})` }}
-          className="absolute top-0 left-0 w-full h-[900px] min-h-[800px] lg:min-h-[700px] bg-cover bg-top z-[-1]"
+          className="absolute top-0 left-0 w-full min-h-[800px] lg:min-h-[900px] bg-cover bg-top z-[-1]"
         />
         <motion.div 
           className="mx-auto max-w-4xl text-center sm px-2 lg:pt-40" 
