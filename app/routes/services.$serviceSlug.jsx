@@ -39,6 +39,11 @@ export default function ServiceDetail() {
 export const meta =({data}) => {
   return [
     {title: `${data.tag} | Razor Hollow`},
-    {name: "description", content: data.meta}
+    {name: "description", content: data.meta},
+    {
+      tagName: "link",
+      rel: "canonical",
+      href: `https://razorhollow.com/services/${data.slug}`
+    },
   ]
 }

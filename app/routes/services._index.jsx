@@ -21,5 +21,10 @@ export default function ServicesIndex() {
 
 export const meta = () => [
   { title: "Outdoor Marketing Services | Razor Hollow" },
-  { name: "description", content: "Explore Razor Hollow's comprehensive outdoor marketing services, including web development, marketing strategy, video production, and photography."}
+  { name: "description", content: "Explore Razor Hollow's comprehensive outdoor marketing services, including web development, marketing strategy, video production, and photography."},
+  {
+    tagName: "link",
+    rel: "canonical",
+    href: "https://razorhollow.com/services"
+  },
 ];

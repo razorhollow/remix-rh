@@ -59,6 +59,11 @@ export default function Legal() {
 export const meta =() => {
   return [
     {title: 'Legal Policies | Privacy & Terms | Razor Hollow'},
-    {name: "description", content: "Read Razor Hollow's legal policies, including our privacy policy and terms of service. Understand how we protect your data and our terms of use."}
+    {name: "description", content: "Read Razor Hollow's legal policies, including our privacy policy and terms of service. Understand how we protect your data and our terms of use."},
+    {
+      tagName: "link",
+      rel: "canonical",
+      href: "https://razorhollow.com/legal"
+    },
   ]
 }

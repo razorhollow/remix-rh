@@ -219,6 +219,11 @@ export default function Contact() {
 export const meta = () => {
   return [
     { title: 'Contact Razor Hollow | Outdoor Marketing Experts' },
-    { name: "description", content: "Get in touch with Razor Hollow. Reach out for inquiries about our outdoor marketing services and discover how we can help your business succeed." }
+    { name: "description", content: "Get in touch with Razor Hollow. Reach out for inquiries about our outdoor marketing services and discover how we can help your business succeed." },
+    {
+      tagName: "link",
+      rel: "canonical",
+      href: "https://razorhollow.com/contact"
+    },
   ]
 }

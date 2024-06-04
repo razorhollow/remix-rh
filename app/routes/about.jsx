@@ -262,5 +262,10 @@ export default function AboutPage() {
 
 export const meta = () => [
   { title: "About Razor Hollow: Our Outdoor Marketing Expertise" },
-  { name: "description", content: "Learn about Razor Hollow's mission to empower outdoor professionals with cutting-edge technology and storytelling. Discover our values and expertise."}
+  { name: "description", content: "Learn about Razor Hollow's mission to empower outdoor professionals with cutting-edge technology and storytelling. Discover our values and expertise."},
+  {
+    tagName: "link",
+    rel: "canonical",
+    href: "https://razorhollow.com/about"
+  },
 ];

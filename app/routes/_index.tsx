@@ -9,7 +9,12 @@ import USP from 'app/components/USP'
 
 export const meta: MetaFunction = () => [
   { title: "Razor Hollow: Outdoor Brand Development & Marketing" },
-  { Name: "description", content: "Razor Hollow: Leading outdoor brand development through web design, marketing strategy, video production, and photography. Elevate your outdoor business with us."}
+  { name: "description", content: "Razor Hollow: Leading outdoor brand development through web design, marketing strategy, video production, and photography. Elevate your outdoor business with us."},
+  {
+    tagName: "link",
+    rel: "canonical",
+    href: "https://razorhollow.com"
+  },
 ];
 
 export default function Index() {
