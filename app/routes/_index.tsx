@@ -13,7 +13,7 @@ export const meta: MetaFunction = () => [
   {
     tagName: "link",
     rel: "canonical",
-    href: "https://razorhollow.com"
+    href: "https://www.razorhollow.com"
   },
 ];
 

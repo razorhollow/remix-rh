@@ -63,7 +63,7 @@ export const meta =() => {
     {
       tagName: "link",
       rel: "canonical",
-      href: "https://razorhollow.com/legal"
+      href: "https://www.razorhollow.com/legal"
     },
   ]
 }
