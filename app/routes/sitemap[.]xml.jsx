@@ -9,47 +9,47 @@ export async function loader() {
   
   
   <url>
-    <loc>https://razorhollow.com/</loc>
+    <loc>https://www.razorhollow.com/</loc>
     <lastmod>2024-05-23T16:37:12+00:00</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://razorhollow.com/about</loc>
+    <loc>https://www.razorhollow.com/about</loc>
     <lastmod>2024-05-23T16:37:12+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://razorhollow.com/services</loc>
+    <loc>https://www.razorhollow.com/services</loc>
     <lastmod>2024-05-23T16:37:12+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://razorhollow.com/contact</loc>
+    <loc>https://www.razorhollow.com/contact</loc>
     <lastmod>2024-05-23T16:37:12+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://razorhollow.com/services/web-development</loc>
+    <loc>https://www.razorhollow.com/services/web-development</loc>
     <lastmod>2024-05-23T16:37:12+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://razorhollow.com/services/video-production</loc>
+    <loc>https://www.razorhollow.com/services/video-production</loc>
     <lastmod>2024-05-23T16:37:12+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://razorhollow.com/services/marketing-strategy</loc>
+    <loc>https://www.razorhollow.com/services/marketing-strategy</loc>
     <lastmod>2024-05-23T16:37:12+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://razorhollow.com/services/photography</loc>
+    <loc>https://www.razorhollow.com/services/photography</loc>
     <lastmod>2024-05-23T16:37:12+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://razorhollow.com/legal</loc>
+    <loc>https://www.razorhollow.com/legal</loc>
     <lastmod>2024-05-23T16:37:12+00:00</lastmod>
     <priority>0.80</priority>
   </url>

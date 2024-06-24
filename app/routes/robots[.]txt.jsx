@@ -1,6 +1,6 @@
 export const loader = () => {
-  const robotText =`
-    User-agent: *
+  const robotText = `
+User-agent: *
 Disallow: /dashboard
 Disallow: /healthcheck
 Disallow: /logout
@@ -10,13 +10,12 @@ Disallow: /send
 Disallow: /test
 
 Sitemap: /sitemap.xml
-
-  `
-    
-return new Response(robotText, {
-  status: 200,
-  headers: {
-    "Content-Type": "text/plain",
-  }
-})
+  `;
+  
+  return new Response(robotText.trim(), {
+    status: 200,
+    headers: {
+      "Content-Type": "text/plain",
+    },
+  });
 };
