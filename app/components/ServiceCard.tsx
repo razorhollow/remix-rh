@@ -23,7 +23,7 @@ const ServiceCard: React.FC<ServiceProps> = ({ service }) => {
       <h2 className="text-xl font-bold" style={{ color: 'goldenrod' }}>{service.name}</h2>
       <p className="mt-2 mb-4 text-gray-200">{service.headline}</p>
       <PlusCircleIcon className="h-12 w-12 absolute right-4 bottom-4"/>
-      <Link to={`/services/${service.slug}`} className="absolute inset-0 rounded-lg focus:outline-none focus:shadow-outline"></Link>
+      <Link to={`/services/${service.slug}`} className="absolute inset-0 rounded-lg focus:outline-none focus:shadow-outline" aria-label={service.name} title={service.name}></Link>
     </div>
   );
 };
