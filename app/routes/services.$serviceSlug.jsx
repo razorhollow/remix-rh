@@ -43,7 +43,7 @@ export const meta =({data}) => {
     {
       tagName: "link",
       rel: "canonical",
-      href: `https://razorhollow.com/services/${data.slug}`
+      href: `https://www.razorhollow.com/services/${data.slug}`
     },
   ]
 }

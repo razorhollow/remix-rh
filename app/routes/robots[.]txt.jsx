@@ -9,7 +9,7 @@ Disallow: /notes
 Disallow: /send
 Disallow: /test
 
-Sitemap: /sitemap.xml
+Sitemap: https://www.razorhollow.com/sitemap.xml
   `;
   
   return new Response(robotText.trim(), {

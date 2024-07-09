@@ -25,6 +25,6 @@ export const meta = () => [
   {
     tagName: "link",
     rel: "canonical",
-    href: "https://razorhollow.com/services"
+    href: "https://www.razorhollow.com/services"
   },
 ];
