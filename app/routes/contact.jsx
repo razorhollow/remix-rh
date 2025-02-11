@@ -2,31 +2,18 @@ import { json, redirect } from '@remix-run/node';
 import { Form } from '@remix-run/react';
 import { Resend } from 'resend';
 import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
-import { HoneypotInputs } from 'remix-utils/honeypot/react';
-import { SpamError } from 'remix-utils/honeypot/server';
-
-import { honeypot } from "../honeypot.server.mjs"
-
 
 export async function action({ request }) {
+    console.log('RESEND_API_KEY:', process.env.RESEND_API_KEY);
     const resend = new Resend(process.env.RESEND_API_KEY)
     let formData = await request.formData();
-    try {
-        honeypot.check(formData);
-    } catch (error) {
-        if (error instanceof SpamError) {
-            console.error('Spam detected from formData:', formData);
-            return new Response(JSON.stringify({
-                status: 'success',
-                message: 'Form submission received.'
-            }), {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-        } else {
-            return json({ error: error.message }, 500);
-        }
+    
+    // Check honeypot field
+    const honeypotValue = formData.get('website');
+    if (honeypotValue) {
+        // If honeypot field is filled, silently reject but return success to avoid tipping off bots
+        console.log('Honeypot caught a bot submission');
+        return json({ success: true });
     }
 
     const firstName = formData.get('first-name');
@@ -34,6 +21,17 @@ export async function action({ request }) {
     const email = formData.get('email');
     const phone = formData.get('phone-number');
     const message = formData.get('message');
+
+    // Add validation
+    if (!firstName || !lastName || !email || !message) {
+        return json({ error: 'All fields except phone are required' }, { status: 400 });
+    }
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        return json({ error: 'Please provide a valid email address' }, { status: 400 });
+    }
 
     const { error: sendError } = await resend.emails.send({
         from: 'New Form Submission <onboarding@alerts.razorhollow.com>',
@@ -128,9 +126,19 @@ export default function Contact() {
         </div>
         <Form method="POST" className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
           <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+            {/* Hidden honeypot field */}
+            <div style={{ display: 'none' }}>
+                <label htmlFor="website">Website</label>
+                <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                />
+            </div>
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
-                <HoneypotInputs label="Please leave this field blank" />
                 <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-gray-900">
                   First name
                 </label>
