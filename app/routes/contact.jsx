@@ -22,6 +22,12 @@ export async function action({ request }) {
     const phone = formData.get('phone-number');
     const message = formData.get('message');
 
+    // Check for "null" in any form field
+    const formValues = [firstName, lastName, email, phone, message].join(' ').toLowerCase();
+    if (formValues.includes('null')) {
+        return redirect('https://www.fbi.gov/investigate/cyber');
+    }
+
     // Add validation
     if (!firstName || !lastName || !email || !message) {
         return json({ error: 'All fields except phone are required' }, { status: 400 });
