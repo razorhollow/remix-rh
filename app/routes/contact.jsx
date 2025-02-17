@@ -29,7 +29,7 @@ export async function action({ request }) {
     }
 
     // Add validation
-    if (!firstName || !lastName || !email || !message) {
+    if (!firstName || !lastName || !email || !message || firstName === lastName) {
         return json({ error: 'All fields except phone are required' }, { status: 400 });
     }
 
