@@ -65,7 +65,22 @@ export async function action({ request }) {
       }
     }
 
-    // create a time check that prevents rapid form submissions from bots
+    // Check for bot submissions by validating submission timing
+    const formStartTime = await formData.get('formStartTime');
+    const submissionTime = Date.now();
+    const minSubmissionTime = 3000; // 3 seconds
+    const maxSubmissionTime = 3600000; // 1 hour
+
+    if (!formStartTime) {
+        return json({ error: 'Invalid form submission' }, { status: 400 });
+    }
+
+    const timeDiff = submissionTime - parseInt(formStartTime);
+    
+    // Reject if form submitted too quickly (bot) or after too long (session expired)
+    if (timeDiff < minSubmissionTime || timeDiff > maxSubmissionTime) {
+        return json({ error: 'Invalid form submission' }, { status: 400 });
+    }
 
     const { error: sendError } = await resend.emails.send({
         from: 'New Form Submission <onboarding@alerts.razorhollow.com>',
