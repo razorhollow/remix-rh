@@ -33,11 +33,39 @@ export async function action({ request }) {
         return json({ error: 'All fields except phone are required' }, { status: 400 });
     }
 
+    
+
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
         return json({ error: 'Please provide a valid email address' }, { status: 400 });
     }
+
+    // Phone number validation
+    if (phone) {
+      // Remove any non-digit characters
+      const cleanPhone = phone.replace(/\D/g, '');
+      
+      // Remove leading '1' if present
+      const nationalNumber = cleanPhone.startsWith('1') ? cleanPhone.slice(1) : cleanPhone;
+      
+      // Check if it's a valid US phone number (10 digits)
+      if (nationalNumber.length !== 10) {
+        return json({ error: "Please enter a valid 10-digit US phone number" }, { status: 400 });
+      }
+
+      // Check for 555 area code
+      if (nationalNumber.substring(0,3) === '555') {
+        return json({ error: "Invalid area code" }, { status: 400 });
+      }
+
+      // Validate first digit is between 2-9 for valid US area code
+      if (nationalNumber[0] === '0' || nationalNumber[0] === '1') {
+        return json({ error: "Invalid US area code" }, { status: 400 });
+      }
+    }
+
+    // create a time check that prevents rapid form submissions from bots
 
     const { error: sendError } = await resend.emails.send({
         from: 'New Form Submission <onboarding@alerts.razorhollow.com>',
