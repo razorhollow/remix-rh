@@ -185,6 +185,11 @@ export default function Contact() {
                     tabIndex={-1}
                     autoComplete="off"
                 />
+                <input 
+                    type="hidden"
+                    name="formStartTime"
+                    value={Date.now()}
+                />
             </div>
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
