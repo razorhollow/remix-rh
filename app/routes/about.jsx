@@ -87,26 +87,26 @@ export default function AboutPage() {
           <div className="overflow-hidden">
             <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-                <div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-                  <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                  Hi there, I&apos;m Rob Reynolds
-                  </h1>
-                  <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-                  I&apos;m an experienced outdoor photographer, filmmaker, and guide who spent the last 10 years in the outdoor industry. My peers often dub me the <span className="text-pine italic">&quot;Backwoods Techie&quot;</span>, and rightfully so, as for a decade, I&apos;ve been assisting my clients to fill their books with business, creating a compelling online presence through stunning visuals and fully-functional, custom websites.
-                  </p>
-                  <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-                  <span className="mt-4 text-lg md:text-xl leading-relaxed text-gray-900">But why do I do what I do?</span> Because I&apos;ve been where you are. I know how daunting it can be to try and market your outdoor business, with no clear starting point and potential customers slipping away due to underwhelming visuals. All the while, wasting time and precious resources.
-                  </p>
-                  <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-                    <span className="mt-4 text-lg md:text-xl leading-relaxed text-gray-900">I started off as a struggling small business owner,</span> hoping that clients would somehow find me through my minimal marketing efforts. It was back when social media was still a budding concept, and online video was unheard of. I had no choice but to figure things out on my own. I taught myself how to build websites and capture great photos, which eventually led me to start a video production and photography company.
-                  </p>
-                  <p className="mt-4 text-lg md:text-xl leading-relaxed">
-                    That&apos;s when I discovered the true power of high-quality visuals and how they can transform a business. A compelling image is not just an image; it&apos;s a magnet that draws customers in.
-                  </p>
-                  <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-                    I understand that having a robust online presence with captivating visuals is crucial for your success in the outdoor industry. I understand this challenge very well and that&apos;s why I&apos;m dedicated to helping you elevate your brand, connect with your audience visually, and attract more clients effortlessly.
-                  </p>
-                </div>
+              <div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
+  <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+    Hi there, I&apos;m Rob Reynolds
+  </h1>
+  <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+    For over a decade, I&apos;ve been in the outdoor industry—guiding, photographing, and filming adventures. My peers call me the <span className="text-pine italic">&quot;Backwoods Techie&quot;</span> because I know what it&apos;s like to hustle in the wild and still make the tech side work for my clients.
+  </p>
+  <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+    <span className="mt-4 text-lg md:text-xl leading-relaxed text-gray-900">But here&apos;s the deal:</span> After years of filling my clients&apos; books through compelling visuals, I realized the real game-changer wasn&apos;t just the photos or videos—it was the website behind them. A high-converting site that does the heavy lifting, turning curious browsers into paying customers.
+  </p>
+  <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+    <span className="mt-4 text-lg md:text-xl leading-relaxed text-gray-900">I started off just like you—</span> a small business owner in the outdoor world, unsure how to reach more clients and feeling the pain of missed opportunities. I learned, through trial and error, how to build websites that actually make the phone ring.
+  </p>
+  <p className="mt-4 text-lg md:text-xl leading-relaxed">
+    Now, I&apos;ve doubled down on what really moves the needle: strategic web design that converts. My photography and video skills? They&apos;re still in the toolkit—but only to supercharge your website&apos;s effectiveness.
+  </p>
+  <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+    I know how overwhelming it can be trying to grow an outdoor business in a crowded digital space. That&apos;s why I&apos;m laser-focused on building websites that immediately capture attention, showcase your brand authentically, and bring in more paying clients—so you can spend less time worrying about marketing and more time doing what you love.
+  </p>
+</div>
                 <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
                   <div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
                     <div className="relative">
