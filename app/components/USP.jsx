@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion"
 
-import imageAssetUrl from 'app/assets/guide-photo.jpg'
+import imageAssetUrl from 'app/assets/guide-photo.webp'
 
 export default function USP() {
 
