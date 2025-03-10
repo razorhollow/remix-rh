@@ -1,7 +1,7 @@
 import { Link } from '@remix-run/react';
 
 import { motion } from 'framer-motion';
-import heroAssetURL from 'app/assets/fly-fishing.jpeg'
+import heroAssetURL from 'app/assets/fly-fishing.webp'
 
 export default function HeroSection() {
   return (
