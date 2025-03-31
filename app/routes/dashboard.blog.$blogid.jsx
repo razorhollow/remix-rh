@@ -1,6 +1,7 @@
 import { json } from '@remix-run/node';
 import { Link, useLoaderData } from '@remix-run/react';
 import { prisma } from '~/db.server';
+import { marked } from 'marked';
 
 export const loader = async ({ params }) => {
   const { blogid } = params;
@@ -12,8 +13,11 @@ export const loader = async ({ params }) => {
   if (!post) {
     throw new Response('Not Found', { status: 404 });
   }
+
+  // Convert markdown to HTML
+  const contentHtml = marked(post.content);
   
-  return json({ post });
+  return json({ post: { ...post, contentHtml } });
 };
 
 export default function DashboardBlogPostView() {
@@ -34,7 +38,7 @@ export default function DashboardBlogPostView() {
                 {post.published ? 'Published' : 'Draft'}
               </span>
               <Link
-                to={`/dashboard/blog/${post.id}`}
+                to={`/dashboard/blog/${post.id}/edit`}
                 className="text-sm text-indigo-600 hover:text-indigo-900"
               >
                 Edit
@@ -65,7 +69,7 @@ export default function DashboardBlogPostView() {
           )}
 
           <div className="mt-8 prose prose-lg max-w-none">
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
           </div>
 
           <div className="mt-8 text-sm text-gray-500">

@@ -1,6 +1,8 @@
 import { json } from '@remix-run/node';
 import { Outlet, Form, Link, useLoaderData } from '@remix-run/react';
 import { prisma } from '~/db.server';
+import { useState } from 'react';
+import ConfirmationDialog from '~/components/confirmation-dialog';
 
 export const loader = async () => {
   const posts = await prisma.blogPost.findMany({
@@ -42,6 +44,7 @@ export const action = async ({ request }) => {
 
 export default function DashboardBlog() {
   const { posts } = useLoaderData();
+  const [deletePost, setDeletePost] = useState(null);
   
   return (
     <div className="bg-white">
@@ -103,23 +106,16 @@ export default function DashboardBlog() {
                               {post.published ? 'Unpublish' : 'Publish'}
                             </button>
                           </Form>
-                          <Link to={`/dashboard/blog/${post.id}`} className="text-indigo-600 hover:text-indigo-900">
+                          <Link to={`/dashboard/blog/${post.id}/edit`} className="text-indigo-600 hover:text-indigo-900">
                             Edit
                           </Link>
-                          <Form method="post" onSubmit={(e) => {
-                            if (!confirm('Are you sure you want to delete this post?')) {
-                              e.preventDefault();
-                            }
-                          }}>
-                            <input type="hidden" name="id" value={post.id} />
-                            <input type="hidden" name="_action" value="delete" />
-                            <button
-                              type="submit"
-                              className="text-red-600 hover:text-red-900"
-                            >
-                              Delete
-                            </button>
-                          </Form>
+                          <button
+                            type="button"
+                            className="text-red-600 hover:text-red-900"
+                            onClick={() => setDeletePost(post)}
+                          >
+                            Delete
+                          </button>
                         </div>
                       </td>
                     </tr>
@@ -131,6 +127,24 @@ export default function DashboardBlog() {
         </div>
       </div>
       <Outlet />
+
+      {deletePost && (
+        <ConfirmationDialog
+          isOpen={!!deletePost}
+          onClose={() => setDeletePost(null)}
+          onConfirm={() => {
+            const form = document.getElementById('delete-form');
+            if (form) form.submit();
+          }}
+          title="Delete Blog Post"
+          message={`Are you sure you want to delete "${deletePost.title}"? This action cannot be undone.`}
+        />
+      )}
+
+      <Form id="delete-form" method="post">
+        <input type="hidden" name="id" value={deletePost?.id} />
+        <input type="hidden" name="_action" value="delete" />
+      </Form>
     </div>
   );
 }

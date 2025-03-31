@@ -12,7 +12,7 @@ export default function DashboardPage() {
   const { user } = useLoaderData();
 
   return (
-    <div className="flex h-full min-h-screen flex-col">
+    <div className="flex h-screen flex-col">
       <header className="flex items-center justify-between bg-slate-800 p-4 text-white">
         <h1 className="text-3xl font-bold">
           <Link to=".">Admin Dashboard</Link>
@@ -28,8 +28,8 @@ export default function DashboardPage() {
         </Form>
       </header>
 
-      <main className="flex h-full bg-white">
-        <div className="h-full w-80 border-r bg-gray-50">
+      <div className="flex flex-1 overflow-hidden">
+        <div className="w-80 border-r bg-gray-50 overflow-y-auto">
           <nav className="p-4">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Tools</h2>
             <ul className="space-y-2">
@@ -73,10 +73,12 @@ export default function DashboardPage() {
           </nav>
         </div>
 
-        <div className="flex-1 p-6">
-          <Outlet />
+        <div className="flex-1 overflow-y-auto">
+          <div className="p-6">
+            <Outlet />
+          </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
