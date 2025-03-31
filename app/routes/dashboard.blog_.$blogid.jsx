@@ -27,29 +27,36 @@ export default function DashboardBlogPostView() {
     <div className="flex-1 p-6">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl">
+          <div className="flex items-center justify-between mb-6">
+            <Link
+              to="/dashboard/blog"
+              className="inline-flex items-center gap-1 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+              </svg>
+              Back to Blog Posts
+            </Link>
+            <Link
+              to={`/dashboard/blog/${post.id}/edit`}
+              className="inline-flex items-center gap-1 rounded-md bg-goldenrod px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Edit Post
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
+          </div>
+
           <div className="flex items-center justify-between">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900">
               {post.title}
             </h1>
-            <div className="flex items-center gap-4">
-              <span className={`inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ${
-                post.published ? 'bg-green-50 text-green-700 ring-1 ring-inset ring-green-600/20' : 'bg-yellow-50 text-yellow-800 ring-1 ring-inset ring-yellow-600/20'
-              }`}>
-                {post.published ? 'Published' : 'Draft'}
-              </span>
-              <Link
-                to={`/dashboard/blog/${post.id}/edit`}
-                className="text-sm text-indigo-600 hover:text-indigo-900"
-              >
-                Edit
-              </Link>
-              <Link
-                to="/dashboard/blog"
-                className="text-sm text-gray-500 hover:text-gray-700"
-              >
-                ← Back to Blog Posts
-              </Link>
-            </div>
+            <span className={`inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ${
+              post.published ? 'bg-green-50 text-green-700 ring-1 ring-inset ring-green-600/20' : 'bg-yellow-50 text-yellow-800 ring-1 ring-inset ring-yellow-600/20'
+            }`}>
+              {post.published ? 'Published' : 'Draft'}
+            </span>
           </div>
 
           {post.imageUrl ? <div className="mt-6">
