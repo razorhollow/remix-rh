@@ -29,26 +29,6 @@ export async function loader() {
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.razorhollow.com/services/web-development</loc>
-    <lastmod>2024-05-23T16:37:12+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.razorhollow.com/services/video-production</loc>
-    <lastmod>2024-05-23T16:37:12+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.razorhollow.com/services/marketing-strategy</loc>
-    <lastmod>2024-05-23T16:37:12+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.razorhollow.com/services/photography</loc>
-    <lastmod>2024-05-23T16:37:12+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
     <loc>https://www.razorhollow.com/legal</loc>
     <lastmod>2024-05-23T16:37:12+00:00</lastmod>
     <priority>0.80</priority>
