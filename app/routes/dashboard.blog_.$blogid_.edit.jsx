@@ -1,6 +1,7 @@
 import { json, redirect } from '@remix-run/node';
 import { Form, Link, useActionData, useLoaderData } from '@remix-run/react';
 import { prisma } from '~/db.server';
+import { uploadImage } from '~/utils/cloudinary.server';
 
 export const loader = async ({ params }) => {
   const { blogid } = params;
@@ -22,8 +23,19 @@ export const action = async ({ request, params }) => {
   const slug = formData.get('slug');
   const content = formData.get('content');
   const excerpt = formData.get('excerpt');
-  const imageUrl = formData.get('imageUrl');
   const published = formData.get('published') === 'on';
+  
+  // Handle image upload
+  const imageFile = formData.get('image');
+  let imageUrl = formData.get('currentImageUrl');
+  
+  if (imageFile && imageFile.size > 0) {
+    try {
+      imageUrl = await uploadImage(imageFile);
+    } catch (error) {
+      return json({ errors: { image: 'Failed to upload image' } });
+    }
+  }
   
   // Validate
   const errors = {};
@@ -73,7 +85,9 @@ export default function DashboardBlogPostEdit() {
             </Link>
           </div>
           
-          <Form method="post" className="mt-8 space-y-8">
+          <Form method="post" encType="multipart/form-data" className="mt-8 space-y-8">
+            <input type="hidden" name="currentImageUrl" value={post.imageUrl || ''} />
+            
             <div>
               <label htmlFor="title" className="block text-sm font-medium leading-6 text-gray-900">
                 Title
@@ -86,7 +100,9 @@ export default function DashboardBlogPostEdit() {
                   defaultValue={post.title}
                   className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-                {actionData?.errors?.title ? <p className="mt-2 text-sm text-red-600">{actionData.errors.title}</p> : null}
+                {actionData?.errors?.title && (
+                  <p className="mt-2 text-sm text-red-600">{actionData.errors.title}</p>
+                )}
               </div>
             </div>
             
@@ -102,36 +118,56 @@ export default function DashboardBlogPostEdit() {
                   defaultValue={post.slug}
                   className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-                {actionData?.errors?.slug ? <p className="mt-2 text-sm text-red-600">{actionData.errors.slug}</p> : null}
+                {actionData?.errors?.slug && (
+                  <p className="mt-2 text-sm text-red-600">{actionData.errors.slug}</p>
+                )}
+              </div>
+            </div>
+            
+            <div>
+              <label htmlFor="image" className="block text-sm font-medium leading-6 text-gray-900">
+                Featured Image
+              </label>
+              <div className="mt-2">
+                {post.imageUrl && (
+                  <div className="mb-4">
+                    <img
+                      src={post.imageUrl}
+                      alt="Current featured"
+                      className="h-32 w-auto rounded-lg object-cover"
+                    />
+                  </div>
+                )}
+                <input
+                  type="file"
+                  name="image"
+                  id="image"
+                  accept="image/*"
+                  className="block w-full text-sm text-gray-500
+                    file:mr-4 file:py-2 file:px-4
+                    file:rounded-md file:border-0
+                    file:text-sm file:font-semibold
+                    file:bg-goldenrod file:text-white
+                    hover:file:bg-indigo-500"
+                />
+                {actionData?.errors?.image && (
+                  <p className="mt-2 text-sm text-red-600">{actionData.errors.image}</p>
+                )}
               </div>
             </div>
             
             <div>
               <label htmlFor="excerpt" className="block text-sm font-medium leading-6 text-gray-900">
-                Excerpt
+                Excerpt (Optional)
               </label>
               <div className="mt-2">
                 <textarea
                   name="excerpt"
                   id="excerpt"
                   rows={3}
-                  defaultValue={post.excerpt}
+                  defaultValue={post.excerpt || ''}
                   className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
-            
-            <div>
-              <label htmlFor="imageUrl" className="block text-sm font-medium leading-6 text-gray-900">
-                Image URL
-              </label>
-              <div className="mt-2">
-                <input
-                  type="text"
-                  name="imageUrl"
-                  id="imageUrl"
-                  defaultValue={post.imageUrl}
-                  className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  placeholder="Leave empty to auto-generate from content"
                 />
               </div>
             </div>
@@ -148,7 +184,9 @@ export default function DashboardBlogPostEdit() {
                   defaultValue={post.content}
                   className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-                {actionData?.errors?.content ? <p className="mt-2 text-sm text-red-600">{actionData.errors.content}</p> : null}
+                {actionData?.errors?.content && (
+                  <p className="mt-2 text-sm text-red-600">{actionData.errors.content}</p>
+                )}
               </div>
             </div>
             

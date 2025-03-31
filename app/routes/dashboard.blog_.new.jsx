@@ -1,6 +1,7 @@
 import { json, redirect } from '@remix-run/node';
 import { Form, Link, useActionData } from '@remix-run/react';
 import { prisma } from '~/db.server';
+import { MarkdownCheatsheet } from '~/components/markdown-cheatsheet';
 
 export const action = async ({ request }) => {
   const formData = await request.formData();
@@ -170,6 +171,7 @@ export default function DashboardBlogNew() {
           </Form>
         </div>
       </div>
+      <MarkdownCheatsheet />
     </div>
   );
 } 
