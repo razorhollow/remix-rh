@@ -8,13 +8,17 @@ cloudinary.config({
 
 export async function uploadImage(file) {
   try {
-    const result = await cloudinary.uploader.upload(file, {
+    // Convert the file to base64
+    const base64File = file.toString('base64');
+    const uploadStr = `data:image/jpeg;base64,${base64File}`;
+    
+    const result = await cloudinary.uploader.upload(uploadStr, {
       folder: 'blog-images',
       resource_type: 'auto',
     });
     return result.secure_url;
   } catch (error) {
-    console.error('Error uploading to Cloudinary:', error);
+    console.error('Cloudinary upload error:', error);
     throw new Error('Failed to upload image');
   }
 } 

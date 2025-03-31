@@ -1,6 +1,7 @@
 import { json, redirect } from '@remix-run/node';
 import { Form, Link, useActionData } from '@remix-run/react';
 import { prisma } from '~/db.server';
+import { uploadImage } from '~/utils/cloudinary.server';
 import { MarkdownCheatsheet } from '~/components/markdown-cheatsheet';
 
 export const action = async ({ request }) => {
@@ -9,7 +10,7 @@ export const action = async ({ request }) => {
   const slug = formData.get('slug');
   const content = formData.get('content');
   const excerpt = formData.get('excerpt');
-  const imageUrl = formData.get('imageUrl');
+  const image = formData.get('image');
   const published = formData.get('published') === 'on';
   
   // Validate
@@ -21,6 +22,18 @@ export const action = async ({ request }) => {
   if (Object.keys(errors).length > 0) {
     return json({ errors });
   }
+
+  let imageUrl = null;
+  if (image && image.size > 0) {
+    try {
+      const arrayBuffer = await image.arrayBuffer();
+      const buffer = Buffer.from(arrayBuffer);
+      imageUrl = await uploadImage(buffer);
+    } catch (error) {
+      console.error('Image upload error:', error);
+      return json({ errors: { image: 'Failed to upload image. Please try again.' } });
+    }
+  }
   
   // Create new post
   const post = await prisma.blogPost.create({
@@ -29,7 +42,7 @@ export const action = async ({ request }) => {
       slug,
       content,
       excerpt: excerpt || null,
-      imageUrl: imageUrl || null,
+      imageUrl,
       published,
     },
   });
@@ -56,7 +69,7 @@ export default function DashboardBlogNew() {
             </Link>
           </div>
           
-          <Form method="post" className="mt-8 space-y-8">
+          <Form method="post" encType="multipart/form-data" className="mt-8 space-y-8">
             <div>
               <label htmlFor="title" className="block text-sm font-medium leading-6 text-gray-900">
                 Title
@@ -90,6 +103,29 @@ export default function DashboardBlogNew() {
                 )}
               </div>
             </div>
+
+            <div>
+              <label htmlFor="image" className="block text-sm font-medium leading-6 text-gray-900">
+                Hero Image
+              </label>
+              <div className="mt-2">
+                <input
+                  type="file"
+                  name="image"
+                  id="image"
+                  accept="image/*"
+                  className="block w-full text-sm text-gray-500
+                    file:mr-4 file:py-2 file:px-4
+                    file:rounded-md file:border-0
+                    file:text-sm file:font-semibold
+                    file:bg-goldenrod file:text-white
+                    hover:file:bg-indigo-600"
+                />
+                {actionData?.errors?.image && (
+                  <p className="mt-2 text-sm text-red-600">{actionData.errors.image}</p>
+                )}
+              </div>
+            </div>
             
             <div>
               <label htmlFor="excerpt" className="block text-sm font-medium leading-6 text-gray-900">
@@ -102,20 +138,6 @@ export default function DashboardBlogNew() {
                   rows={3}
                   className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   placeholder="Leave empty to auto-generate from content"
-                />
-              </div>
-            </div>
-            
-            <div>
-              <label htmlFor="imageUrl" className="block text-sm font-medium leading-6 text-gray-900">
-                Image URL
-              </label>
-              <div className="mt-2">
-                <input
-                  type="text"
-                  name="imageUrl"
-                  id="imageUrl"
-                  className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
