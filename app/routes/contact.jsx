@@ -33,8 +33,6 @@ export async function action({ request }) {
         return json({ error: 'All fields except phone are required' }, { status: 400 });
     }
 
-    
-
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
@@ -104,6 +102,7 @@ export default function Contact() {
   return (
     <div className="relative isolate bg-white">
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
+        {/* Left Column - Info */}
         <div className="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
             <div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden bg-gray-100 ring-1 ring-gray-900/10 lg:w-1/2">
@@ -130,14 +129,24 @@ export default function Contact() {
                 <rect width="100%" height="100%" strokeWidth={0} fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)" />
               </svg>
             </div>
+            
+            {/* Main Info Section */}
             <h1 className="text-4xl font-bold text-gray-900">Get in Touch with Razor Hollow</h1>
             <h2 className="text-3xl font-bold tracking-tight text-gray-900">Become Discoverable.</h2>
+            
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Say goodbye to the daunting task of keeping up with the digital marketing world. Do what you do best, and let us handle the rest.
+              Say goodbye to the daunting task of keeping up with the digital marketing world. As an outdoor professional, your time is better spent doing what you do best—whether that's guiding adventures, designing gear, or managing your outdoor business. Let me handle turning your digital presence into a sales-generating tool.
             </p>
+
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              At Razor Hollow, we offer comprehensive services including web development, marketing strategy, video production, and photography to help your outdoor business thrive. Our team works closely with you to understand your unique needs and deliver personalized solutions that enhance your online presence. From crafting engaging content to optimizing your site for search engines, we provide the expertise you need to stand out in the competitive outdoor industry. Contact us today to discover how we can support your growth.
+              At Razor Hollow, I create custom digital ecosystems specifically designed for outdoor brands. Unlike generic websites that act as static brochures, I build platforms that actively convert visitors into customers. My approach combines strategic marketing expertise with technical development to deliver measurable business results for your outdoor company.
             </p>
+
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Whether you need a complete website overhaul, strategic marketing guidance, or professional visual assets to showcase your outdoor products and services, I provide the expertise you need to stand out in today's competitive landscape.
+            </p>
+            
+            {/* Contact Information */}
             <dl className="mt-10 space-y-4 text-base leading-7 text-gray-600">
               <div className="flex gap-x-4">
                 <dt className="flex-none">
@@ -171,8 +180,37 @@ export default function Contact() {
                 </dd>
               </div>
             </dl>
+            
+            {/* FAQ Section */}
+            <div className="mt-12 border-t border-gray-200 pt-8">
+              <h3 className="text-2xl font-bold tracking-tight text-gray-900">Frequently Asked Questions</h3>
+              
+              <dl className="mt-6 space-y-6">
+                <div>
+                  <dt className="text-lg font-medium text-gray-900">How long does a typical website project take?</dt>
+                  <dd className="mt-2 text-base text-gray-600">Most custom website projects take 4-6 weeks from our initial discovery call to launch. The timeline depends on project scope, content readiness, and your team's availability for feedback. I'll provide a detailed timeline during our initial consultation.</dd>
+                </div>
+                
+                <div>
+                  <dt className="text-lg font-medium text-gray-900">Do you work with businesses outside the outdoor industry?</dt>
+                  <dd className="mt-2 text-base text-gray-600">While I specialize in creating digital solutions for outdoor brands, I occasionally take on projects in adjacent industries where my expertise will add significant value. Feel free to reach out to discuss your specific needs.</dd>
+                </div>
+                
+                <div>
+                  <dt className="text-lg font-medium text-gray-900">What makes your websites different from others?</dt>
+                  <dd className="mt-2 text-base text-gray-600">I don't just build pretty websites—I create strategic business tools designed to generate leads and convert visitors. Every design decision, feature, and piece of content serves your business objectives, with conversion optimization built in from the ground up.</dd>
+                </div>
+                
+                <div>
+                  <dt className="text-lg font-medium text-gray-900">What information should I prepare before our first meeting?</dt>
+                  <dd className="mt-2 text-base text-gray-600">It's helpful to have your business goals, target audience information, any existing brand guidelines, and examples of websites you like. Most importantly, be ready to discuss what success looks like for your digital presence and how it connects to your overall business strategy.</dd>
+                </div>
+              </dl>
+            </div>
           </div>
         </div>
+        
+        {/* Right Column - Form */}
         <Form method="POST" className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
           <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
             {/* Hidden honeypot field */}
