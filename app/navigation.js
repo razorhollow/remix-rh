@@ -3,6 +3,7 @@ const mainNavigation = [
     { name: 'About', href: '/about', icon: 'info' },
     { name: 'Services', href: '/services', icon: 'briefcase' },
     { name: 'Contact', href: '/contact', icon: 'mail' },
+    { name: 'Resources', href: '/blog', icon: 'book' },
   ];
   
   const footerNavigation = {
@@ -14,7 +15,7 @@ const mainNavigation = [
     ],
     company: [
         { name: 'About', href: '/about' },
-        { name: 'Blog', href: '/about'},
+        { name: 'Blog', href: '/blog'},
         { name: 'Contact', href: '/contact'},
         { name: 'Legal', href: '/legal'},
         { name: "Sitemap.xml", href: '/sitemap.xml'}
