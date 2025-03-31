@@ -19,9 +19,14 @@ export default function NotesPage() {
   return (
     <div className="flex h-full min-h-screen flex-col">
       <header className="flex items-center justify-between bg-slate-800 p-4 text-white">
-        <h1 className="text-3xl font-bold">
-          <Link to=".">Notes</Link>
-        </h1>
+        <div className="flex items-center gap-4">
+          <h1 className="text-3xl font-bold">
+            <Link to=".">Notes</Link>
+          </h1>
+          <Link to="/dashboard" className="text-sm text-gray-300 hover:text-white">
+            ← Back to Dashboard
+          </Link>
+        </div>
         <p>{user.email}</p>
         <Form action="/logout" method="post">
           <button

@@ -1,17 +1,21 @@
-import { json } from "@remix-run/node";
+import { json, redirect } from "@remix-run/node";
 import { Form, Link, NavLink, Outlet, useLoaderData } from "@remix-run/react";
+import { getUser } from "~/session.server";
 
-import { useUser } from "~/utils";
-
+export const loader = async ({ request }) => {
+  const user = await getUser(request);
+  if (!user) return redirect("/login");
+  return json({ user });
+};
 
 export default function DashboardPage() {
-  const user = useUser();
+  const { user } = useLoaderData();
 
   return (
     <div className="flex h-full min-h-screen flex-col">
       <header className="flex items-center justify-between bg-slate-800 p-4 text-white">
         <h1 className="text-3xl font-bold">
-          <Link to=".">Notes</Link>
+          <Link to=".">Admin Dashboard</Link>
         </h1>
         <p>{user.email}</p>
         <Form action="/logout" method="post">
@@ -26,11 +30,47 @@ export default function DashboardPage() {
 
       <main className="flex h-full bg-white">
         <div className="h-full w-80 border-r bg-gray-50">
-          <Link to="/dashboard/emaillist" className="block p-4 text-xl text-blue-500">
-            Subscriber List
-          </Link>
-
-          <hr />
+          <nav className="p-4">
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Tools</h2>
+            <ul className="space-y-2">
+              <li>
+                <NavLink
+                  to="/notes"
+                  className={({ isActive }) =>
+                    `block p-2 rounded-md ${
+                      isActive ? "bg-gray-100 text-blue-600" : "text-gray-700 hover:bg-gray-50"
+                    }`
+                  }
+                >
+                  📝 Notes
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/dashboard/blog"
+                  className={({ isActive }) =>
+                    `block p-2 rounded-md ${
+                      isActive ? "bg-gray-100 text-blue-600" : "text-gray-700 hover:bg-gray-50"
+                    }`
+                  }
+                >
+                  📚 Blog Posts
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/dashboard/emaillist"
+                  className={({ isActive }) =>
+                    `block p-2 rounded-md ${
+                      isActive ? "bg-gray-100 text-blue-600" : "text-gray-700 hover:bg-gray-50"
+                    }`
+                  }
+                >
+                  📧 Subscriber List
+                </NavLink>
+              </li>
+            </ul>
+          </nav>
         </div>
 
         <div className="flex-1 p-6">
