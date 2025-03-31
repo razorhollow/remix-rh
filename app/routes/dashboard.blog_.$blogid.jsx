@@ -52,21 +52,17 @@ export default function DashboardBlogPostView() {
             </div>
           </div>
 
-          {post.imageUrl && (
-            <div className="mt-6">
+          {post.imageUrl ? <div className="mt-6">
               <img
                 src={post.imageUrl}
                 alt={post.title}
                 className="w-full rounded-lg shadow-lg"
               />
-            </div>
-          )}
+            </div> : null}
 
-          {post.excerpt && (
-            <div className="mt-6">
+          {post.excerpt ? <div className="mt-6">
               <p className="text-lg text-gray-600 italic">{post.excerpt}</p>
-            </div>
-          )}
+            </div> : null}
 
           <div className="mt-8 prose prose-lg max-w-none">
             <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
@@ -74,9 +70,7 @@ export default function DashboardBlogPostView() {
 
           <div className="mt-8 text-sm text-gray-500">
             <p>Created: {new Date(post.createdAt).toLocaleDateString()}</p>
-            {post.updatedAt && (
-              <p>Last updated: {new Date(post.updatedAt).toLocaleDateString()}</p>
-            )}
+            {post.updatedAt ? <p>Last updated: {new Date(post.updatedAt).toLocaleDateString()}</p> : null}
           </div>
         </div>
       </div>

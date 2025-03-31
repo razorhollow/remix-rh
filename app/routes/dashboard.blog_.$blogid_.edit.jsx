@@ -73,7 +73,7 @@ export default function DashboardBlogPostEdit() {
             </Link>
           </div>
           
-          <Form method="post" className="mt-8 space-y-6">
+          <Form method="post" className="mt-8 space-y-8">
             <div>
               <label htmlFor="title" className="block text-sm font-medium leading-6 text-gray-900">
                 Title
@@ -84,11 +84,9 @@ export default function DashboardBlogPostEdit() {
                   name="title"
                   id="title"
                   defaultValue={post.title}
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-                {actionData?.errors?.title && (
-                  <p className="mt-2 text-sm text-red-600">{actionData.errors.title}</p>
-                )}
+                {actionData?.errors?.title ? <p className="mt-2 text-sm text-red-600">{actionData.errors.title}</p> : null}
               </div>
             </div>
             
@@ -102,11 +100,9 @@ export default function DashboardBlogPostEdit() {
                   name="slug"
                   id="slug"
                   defaultValue={post.slug}
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-                {actionData?.errors?.slug && (
-                  <p className="mt-2 text-sm text-red-600">{actionData.errors.slug}</p>
-                )}
+                {actionData?.errors?.slug ? <p className="mt-2 text-sm text-red-600">{actionData.errors.slug}</p> : null}
               </div>
             </div>
             
@@ -120,7 +116,7 @@ export default function DashboardBlogPostEdit() {
                   id="excerpt"
                   rows={3}
                   defaultValue={post.excerpt}
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -135,7 +131,7 @@ export default function DashboardBlogPostEdit() {
                   name="imageUrl"
                   id="imageUrl"
                   defaultValue={post.imageUrl}
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -150,11 +146,9 @@ export default function DashboardBlogPostEdit() {
                   id="content"
                   rows={15}
                   defaultValue={post.content}
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-                {actionData?.errors?.content && (
-                  <p className="mt-2 text-sm text-red-600">{actionData.errors.content}</p>
-                )}
+                {actionData?.errors?.content ? <p className="mt-2 text-sm text-red-600">{actionData.errors.content}</p> : null}
               </div>
             </div>
             
