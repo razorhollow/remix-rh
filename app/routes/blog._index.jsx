@@ -22,44 +22,54 @@ export default function BlogIndex() {
   const { posts } = useLoaderData();
   
   return (
-    <div className="flex-1 p-6">
-      <div className="mx-auto max-w-7xl">
-        <div className="mx-auto max-w-2xl">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900">
+    <div className="bg-white py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Blog Posts
           </h1>
-          
-          <div className="mt-8 space-y-8">
-            {posts.map((post) => (
-              <article key={post.id} className="relative isolate flex flex-col gap-8 lg:flex-row">
-                {post.imageUrl && (
-                  <div className="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0">
-                    <img
-                      src={post.imageUrl}
-                      alt={post.title}
-                      className="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover"
-                    />
-                  </div>
-                )}
-                <div>
-                  <div className="flex items-center gap-x-4 text-xs">
-                    <time dateTime={post.createdAt} className="text-gray-500">
-                      {new Date(post.createdAt).toLocaleDateString()}
-                    </time>
-                  </div>
-                  <div className="group relative max-w-xl">
-                    <h2 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                      <Link to={`/blog/${post.id}`}>
-                        <span className="absolute inset-0" />
-                        {post.title}
-                      </Link>
-                    </h2>
-                    <div className="mt-5 text-sm leading-6 text-gray-600 prose prose-sm max-w-none" dangerouslySetInnerHTML={{ __html: post.excerptHtml }} />
-                  </div>
+          <p className="mt-2 text-lg leading-8 text-gray-600">
+            Insights, tips, and stories about outdoor marketing and digital strategies.
+          </p>
+        </div>
+        
+        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          {posts.map((post) => (
+            <article key={post.id} className="flex flex-col items-start">
+              {post.imageUrl && (
+                <div className="relative w-full">
+                  <img
+                    src={post.imageUrl}
+                    alt={post.title}
+                    className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                  />
                 </div>
-              </article>
-            ))}
-          </div>
+              )}
+              <div className="max-w-xl">
+                <div className="flex items-center gap-x-4 text-xs mt-6">
+                  <time dateTime={post.createdAt} className="text-gray-500">
+                    {new Date(post.createdAt).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
+                    })}
+                  </time>
+                </div>
+                <div className="group relative">
+                  <h2 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-goldenrod">
+                    <Link to={`/blog/${post.id}`}>
+                      <span className="absolute inset-0" />
+                      {post.title}
+                    </Link>
+                  </h2>
+                  <div 
+                    className="mt-5 text-sm leading-6 text-gray-600 prose prose-sm max-w-none line-clamp-3" 
+                    dangerouslySetInnerHTML={{ __html: post.excerptHtml }} 
+                  />
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </div>
