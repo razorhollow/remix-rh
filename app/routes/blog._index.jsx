@@ -36,15 +36,13 @@ export default function BlogIndex() {
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {posts.map((post) => (
             <article key={post.id} className="flex flex-col items-start">
-              {post.imageUrl && (
-                <div className="relative w-full">
+              {post.imageUrl ? <div className="relative w-full">
                   <img
                     src={post.imageUrl}
                     alt={post.title}
                     className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
                   />
-                </div>
-              )}
+                </div> : null}
               <div className="max-w-xl">
                 <div className="flex items-center gap-x-4 text-xs mt-6">
                   <time dateTime={post.createdAt} className="text-gray-500">
@@ -57,7 +55,7 @@ export default function BlogIndex() {
                 </div>
                 <div className="group relative">
                   <h2 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-goldenrod">
-                    <Link to={`/blog/${post.id}`}>
+                    <Link to={`/blog/${post.slug}`}>
                       <span className="absolute inset-0" />
                       {post.title}
                     </Link>
