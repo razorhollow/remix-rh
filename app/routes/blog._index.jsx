@@ -35,38 +35,63 @@ export default function BlogIndex() {
         
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {posts.map((post) => (
-            <article key={post.id} className="flex flex-col items-start">
-              {post.imageUrl ? <div className="relative w-full">
-                  <img
-                    src={post.imageUrl}
-                    alt={post.title}
-                    className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-                  />
-                </div> : null}
-              <div className="max-w-xl">
-                <div className="flex items-center gap-x-4 text-xs mt-6">
-                  <time dateTime={post.createdAt} className="text-gray-500">
-                    {new Date(post.createdAt).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })}
-                  </time>
+            <article key={post.id} className="relative flex flex-col items-start overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 group">
+            {/* Make entire card clickable */}
+            <Link to={`/blog/${post.slug}`} className="absolute inset-0 z-10">
+              <span className="sr-only">View {post.title}</span>
+            </Link>
+            
+            {/* Image container with title overlay */}
+            <div className="relative w-full h-64 bg-gray-200">
+              {post.imageUrl ? (
+                <img
+                  src={post.imageUrl}
+                  alt={post.title}
+                  className="w-full h-full object-cover rounded-t-lg"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <svg 
+                    className="w-16 h-16 text-gray-400" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth="2" 
+                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
                 </div>
-                <div className="group relative">
-                  <h2 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-goldenrod">
-                    <Link to={`/blog/${post.slug}`}>
-                      <span className="absolute inset-0" />
-                      {post.title}
-                    </Link>
-                  </h2>
-                  <div 
-                    className="mt-5 text-sm leading-6 text-gray-600 prose prose-sm max-w-none line-clamp-3" 
-                    dangerouslySetInnerHTML={{ __html: post.excerptHtml }} 
-                  />
-                </div>
+              )}
+              
+              {/* Title overlay at the bottom */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <h2 className="text-white font-semibold text-lg">
+                  {post.title}
+                </h2>
               </div>
-            </article>
+            </div>
+            
+            {/* Content section */}
+            <div className="p-4 w-full relative z-0">
+              <div className="flex items-center gap-x-4 text-xs">
+                <time dateTime={post.createdAt} className="text-gray-500">
+                  {new Date(post.createdAt).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  })}
+                </time>
+              </div>
+              <div className="mt-3 text-sm leading-6 text-gray-600 prose prose-sm max-w-none line-clamp-3" 
+                dangerouslySetInnerHTML={{ __html: post.excerptHtml }} 
+              />
+            </div>
+          </article>
           ))}
         </div>
       </div>
