@@ -2,6 +2,7 @@ import { json, redirect } from '@remix-run/node';
 import { Form, Link, useActionData, useLoaderData } from '@remix-run/react';
 import { prisma } from '~/db.server';
 import { uploadImage } from '~/utils/cloudinary.server';
+import { CATEGORIES } from '~/utils/blog-categories';
 
 export const loader = async ({ params }) => {
   const { blogid } = params;
@@ -25,6 +26,8 @@ export const action = async ({ request, params }) => {
   const excerpt = formData.get('excerpt');
   const imageAlt = formData.get('imageAlt');
   const published = formData.get('published') === 'on';
+  const category = formData.get('category'); // Get category
+  const subcategory = formData.get('subcategory'); // Get subcategory
   
   // Handle image upload
   const imageFile = formData.get('image');
@@ -57,6 +60,7 @@ export const action = async ({ request, params }) => {
   if (!title) errors.title = 'Title is required';
   if (!slug) errors.slug = 'Slug is required';
   if (!content) errors.content = 'Content is required';
+  if (!category) errors.category = 'Category is required';
   
   if (Object.keys(errors).length > 0) {
     return json({ errors });
@@ -75,6 +79,8 @@ export const action = async ({ request, params }) => {
       imageUrl: imageUrl || null,
       imageAlt: imageAlt || null,
       published,
+      category,
+      subcategory: subcategory || null,
     },
   });
   
@@ -103,6 +109,48 @@ export default function DashboardBlogPostEdit() {
           
           <Form method="post" encType="multipart/form-data" className="mt-8 space-y-8">
             <input type="hidden" name="currentImageUrl" value={post.imageUrl || ''} />
+            
+            {/* Category selection */}
+            <div>
+              <label htmlFor="category" className="block text-sm font-medium leading-6 text-gray-900">
+                Category
+              </label>
+              <div className="mt-2">
+                <select
+                  id="category"
+                  name="category"
+                  className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  defaultValue={post.category || ""}
+                >
+                  <option value="" disabled>Select a category</option>
+                  {CATEGORIES.map((category) => (
+                    <option key={category.id} value={category.id}>
+                      {category.name}
+                    </option>
+                  ))}
+                </select>
+                {actionData?.errors?.category && (
+                  <p className="mt-2 text-sm text-red-600">{actionData.errors.category}</p>
+                )}
+              </div>
+            </div>
+
+            {/* Subcategory field */}
+            <div>
+              <label htmlFor="subcategory" className="block text-sm font-medium leading-6 text-gray-900">
+                Subcategory (Optional)
+              </label>
+              <div className="mt-2">
+                <input
+                  type="text"
+                  name="subcategory"
+                  id="subcategory"
+                  defaultValue={post.subcategory || ""}
+                  className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  placeholder="E.g., Website Essentials, Client Management"
+                />
+              </div>
+            </div>
             
             <div>
               <label htmlFor="title" className="block text-sm font-medium leading-6 text-gray-900">
@@ -259,4 +307,4 @@ export default function DashboardBlogPostEdit() {
       </div>
     </div>
   );
-} 
+}

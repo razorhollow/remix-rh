@@ -2,6 +2,7 @@ import { json } from '@remix-run/node';
 import { Link, useLoaderData } from '@remix-run/react';
 import { prisma } from '~/db.server';
 import { marked } from 'marked';
+import { getCategoryById } from '~/utils/blog-categories';
 
 export const loader = async ({ params }) => {
   const { blogid } = params;
@@ -17,11 +18,17 @@ export const loader = async ({ params }) => {
   // Convert markdown to HTML
   const contentHtml = marked(post.content);
   
-  return json({ post: { ...post, contentHtml } });
+  // Get category information
+  const categoryInfo = getCategoryById(post.category);
+  
+  return json({ 
+    post: { ...post, contentHtml },
+    categoryInfo
+  });
 };
 
 export default function DashboardBlogPostView() {
-  const { post } = useLoaderData();
+  const { post, categoryInfo } = useLoaderData();
   
   return (
     <div className="flex-1 p-6">
@@ -52,11 +59,23 @@ export default function DashboardBlogPostView() {
             <h1 className="text-3xl font-bold tracking-tight text-gray-900">
               {post.title}
             </h1>
-            <span className={`inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ${
-              post.published ? 'bg-green-50 text-green-700 ring-1 ring-inset ring-green-600/20' : 'bg-yellow-50 text-yellow-800 ring-1 ring-inset ring-yellow-600/20'
-            }`}>
-              {post.published ? 'Published' : 'Draft'}
-            </span>
+            <div className="flex flex-col items-end gap-2">
+              <span className={`inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ${
+                post.published ? 'bg-green-50 text-green-700 ring-1 ring-inset ring-green-600/20' : 'bg-yellow-50 text-yellow-800 ring-1 ring-inset ring-yellow-600/20'
+              }`}>
+                {post.published ? 'Published' : 'Draft'}
+              </span>
+              <span className={`inline-flex items-center rounded-md px-2 py-1 text-xs font-medium bg-${categoryInfo.color}-50 text-${categoryInfo.color}-700 ring-1 ring-inset ring-${categoryInfo.color}-600/20`}>
+                {categoryInfo.name}
+              </span>
+              {post.subcategory ? <span className="text-xs text-gray-500">
+                  {post.subcategory}
+                </span> : null}
+            </div>
+          </div>
+
+          <div className="mt-4 text-sm text-gray-500">
+            <p>URL: /blog/{post.slug}</p>
           </div>
 
           {post.imageUrl ? <div className="mt-6">
@@ -83,4 +102,4 @@ export default function DashboardBlogPostView() {
       </div>
     </div>
   );
-} 
+}

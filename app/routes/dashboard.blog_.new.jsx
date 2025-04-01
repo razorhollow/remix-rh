@@ -1,8 +1,11 @@
+// app/routes/dashboard.blog_.new.jsx
+
 import { json, redirect } from '@remix-run/node';
 import { Form, Link, useActionData } from '@remix-run/react';
 import { prisma } from '~/db.server';
 import { uploadImage } from '~/utils/cloudinary.server';
 import { MarkdownCheatsheet } from '~/components/markdown-cheatsheet';
+import { CATEGORIES } from '~/utils/blog-categories';
 
 export const action = async ({ request }) => {
   const formData = await request.formData();
@@ -13,14 +16,17 @@ export const action = async ({ request }) => {
   const image = formData.get('image');
   const imageAlt = formData.get('imageAlt');
   const published = formData.get('published') === 'on';
+  const category = formData.get('category'); // Get category
+  const subcategory = formData.get('subcategory');
   
   // Validate
   const errors = {};
   if (!title) errors.title = 'Title is required';
   if (!slug) errors.slug = 'Slug is required';
   if (!content) errors.content = 'Content is required';
+  if (!category) errors.category = 'Category is required';
   
-  // Validate image if provided
+  // Your existing image validation code
   if (image && image.size > 0) {
     const maxSize = 5 * 1024 * 1024; // 5MB
     if (image.size > maxSize) {
@@ -37,6 +43,7 @@ export const action = async ({ request }) => {
     return json({ errors });
   }
 
+  // Your existing image upload code
   let imageUrl = null;
   if (image && image.size > 0) {
     try {
@@ -49,7 +56,7 @@ export const action = async ({ request }) => {
     }
   }
   
-  // Create new post
+  // Create new post with category
   const post = await prisma.blogPost.create({
     data: {
       title,
@@ -59,6 +66,8 @@ export const action = async ({ request }) => {
       imageUrl,
       imageAlt: imageAlt || null,
       published,
+      category,
+      subcategory: subcategory || null,
     },
   });
   
@@ -85,6 +94,46 @@ export default function DashboardBlogNew() {
           </div>
           
           <Form method="post" encType="multipart/form-data" className="mt-8 space-y-8">
+            {/* Category selection */}
+            <div>
+              <label htmlFor="category" className="block text-sm font-medium leading-6 text-gray-900">
+                Category
+              </label>
+              <div className="mt-2">
+                <select
+                  id="category"
+                  name="category"
+                  className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  defaultValue=""
+                >
+                  <option value="" disabled>Select a category</option>
+                  {CATEGORIES.map((category) => (
+                    <option key={category.id} value={category.id}>
+                      {category.name}
+                    </option>
+                  ))}
+                </select>
+                {actionData?.errors?.category ? <p className="mt-2 text-sm text-red-600">{actionData.errors.category}</p> : null}
+              </div>
+            </div>
+
+            {/* Subcategory field */}
+            <div>
+              <label htmlFor="subcategory" className="block text-sm font-medium leading-6 text-gray-900">
+                Subcategory (Optional)
+              </label>
+              <div className="mt-2">
+                <input
+                  type="text"
+                  name="subcategory"
+                  id="subcategory"
+                  className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  placeholder="E.g., Website Essentials, Client Management"
+                />
+              </div>
+            </div>
+            
+            {/* Rest of your existing form fields */}
             <div>
               <label htmlFor="title" className="block text-sm font-medium leading-6 text-gray-900">
                 Title
@@ -96,9 +145,7 @@ export default function DashboardBlogNew() {
                   id="title"
                   className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-                {actionData?.errors?.title && (
-                  <p className="mt-2 text-sm text-red-600">{actionData.errors.title}</p>
-                )}
+                {actionData?.errors?.title ? <p className="mt-2 text-sm text-red-600">{actionData.errors.title}</p> : null}
               </div>
             </div>
             
@@ -113,9 +160,7 @@ export default function DashboardBlogNew() {
                   id="slug"
                   className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-                {actionData?.errors?.slug && (
-                  <p className="mt-2 text-sm text-red-600">{actionData.errors.slug}</p>
-                )}
+                {actionData?.errors?.slug ? <p className="mt-2 text-sm text-red-600">{actionData.errors.slug}</p> : null}
               </div>
             </div>
 
@@ -136,9 +181,7 @@ export default function DashboardBlogNew() {
                     file:bg-goldenrod file:text-white
                     hover:file:bg-indigo-600"
                 />
-                {actionData?.errors?.image && (
-                  <p className="mt-2 text-sm text-red-600">{actionData.errors.image}</p>
-                )}
+                {actionData?.errors?.image ? <p className="mt-2 text-sm text-red-600">{actionData.errors.image}</p> : null}
               </div>
             </div>
 
@@ -183,9 +226,7 @@ export default function DashboardBlogNew() {
                   rows={15}
                   className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-                {actionData?.errors?.content && (
-                  <p className="mt-2 text-sm text-red-600">{actionData.errors.content}</p>
-                )}
+                {actionData?.errors?.content ? <p className="mt-2 text-sm text-red-600">{actionData.errors.content}</p> : null}
               </div>
             </div>
             
@@ -226,4 +267,4 @@ export default function DashboardBlogNew() {
       <MarkdownCheatsheet />
     </div>
   );
-} 
+}

@@ -52,6 +52,8 @@ model BlogPost {
   content   String
   imageUrl  String?
   imageAlt  String?
+  category    String  @default("uncategorized")
+  subcategory String? // Optional subcategory
   published Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
