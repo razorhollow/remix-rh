@@ -31,10 +31,24 @@ export const action = async ({ request, params }) => {
   let imageUrl = formData.get('currentImageUrl');
   
   if (imageFile && imageFile.size > 0) {
+    // Validate image
+    const maxSize = 5 * 1024 * 1024; // 5MB
+    if (imageFile.size > maxSize) {
+      return json({ errors: { image: 'Image must be less than 5MB' } });
+    }
+    
+    const validTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+    if (!validTypes.includes(imageFile.type)) {
+      return json({ errors: { image: 'Invalid image type. Please use JPEG, PNG, GIF, or WebP' } });
+    }
+
     try {
-      imageUrl = await uploadImage(imageFile);
+      const arrayBuffer = await imageFile.arrayBuffer();
+      const buffer = Buffer.from(arrayBuffer);
+      imageUrl = await uploadImage(buffer);
     } catch (error) {
-      return json({ errors: { image: 'Failed to upload image' } });
+      console.error('Image upload error:', error);
+      return json({ errors: { image: 'Failed to upload image. Please try again.' } });
     }
   }
   

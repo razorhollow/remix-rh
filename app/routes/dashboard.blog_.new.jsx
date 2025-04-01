@@ -20,6 +20,19 @@ export const action = async ({ request }) => {
   if (!slug) errors.slug = 'Slug is required';
   if (!content) errors.content = 'Content is required';
   
+  // Validate image if provided
+  if (image && image.size > 0) {
+    const maxSize = 5 * 1024 * 1024; // 5MB
+    if (image.size > maxSize) {
+      errors.image = 'Image must be less than 5MB';
+    }
+    
+    const validTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+    if (!validTypes.includes(image.type)) {
+      errors.image = 'Invalid image type. Please use JPEG, PNG, GIF, or WebP';
+    }
+  }
+  
   if (Object.keys(errors).length > 0) {
     return json({ errors });
   }

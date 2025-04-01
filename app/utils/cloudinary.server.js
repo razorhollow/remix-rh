@@ -6,13 +6,29 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-export async function uploadImage(file) {
+export async function uploadImage(buffer) {
   try {
-    const result = await cloudinary.uploader.upload(file, {
-      folder: 'blog-images',
-      resource_type: 'auto',
+    if (!buffer || !Buffer.isBuffer(buffer)) {
+      throw new Error('Invalid buffer provided');
+    }
+
+    const uploadResponse = await new Promise((resolve, reject) => {
+      cloudinary.uploader.upload_stream(
+        {
+          folder: 'blog-images',
+          resource_type: 'auto',
+        },
+        (error, result) => {
+          if (error) {
+            reject(error);
+            return;
+          }
+          resolve(result);
+        }
+      ).end(buffer);
     });
-    return result.secure_url;
+
+    return uploadResponse.secure_url;
   } catch (error) {
     console.error('Cloudinary upload error:', error);
     throw new Error('Failed to upload image to Cloudinary');
