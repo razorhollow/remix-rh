@@ -34,7 +34,7 @@ export default function BlogPost() {
           
           {post.imageUrl ? <img
               src={post.imageUrl}
-              alt={post.title}
+              alt={post.imageAlt || post.title}
               className="mt-8 aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover"
             /> : null}
           

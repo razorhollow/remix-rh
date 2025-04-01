@@ -46,7 +46,7 @@ export default function BlogIndex() {
               {post.imageUrl ? (
                 <img
                   src={post.imageUrl}
-                  alt={post.title}
+                  alt={post.imageAlt || post.title}
                   className="w-full h-full object-cover rounded-t-lg"
                 />
               ) : (
@@ -69,17 +69,11 @@ export default function BlogIndex() {
               )}
               
               {/* Title overlay at the bottom */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                <h2 className="text-white font-semibold text-lg">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                <h2 className="text-white font-semibold text-lg drop-shadow-sm">
                   {post.title}
                 </h2>
-              </div>
-            </div>
-            
-            {/* Content section */}
-            <div className="p-4 w-full relative z-0">
-              <div className="flex items-center gap-x-4 text-xs">
-                <time dateTime={post.createdAt} className="text-gray-500">
+                <time dateTime={post.createdAt} className="text-gray-200 text-xs">
                   {new Date(post.createdAt).toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'long',
@@ -87,9 +81,6 @@ export default function BlogIndex() {
                   })}
                 </time>
               </div>
-              <div className="mt-3 text-sm leading-6 text-gray-600 prose prose-sm max-w-none line-clamp-3" 
-                dangerouslySetInnerHTML={{ __html: post.excerptHtml }} 
-              />
             </div>
           </article>
           ))}

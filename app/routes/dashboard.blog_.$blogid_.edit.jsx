@@ -23,6 +23,7 @@ export const action = async ({ request, params }) => {
   const slug = formData.get('slug');
   const content = formData.get('content');
   const excerpt = formData.get('excerpt');
+  const imageAlt = formData.get('imageAlt');
   const published = formData.get('published') === 'on';
   
   // Handle image upload
@@ -58,6 +59,7 @@ export const action = async ({ request, params }) => {
       content,
       excerpt: excerpt || null,
       imageUrl: imageUrl || null,
+      imageAlt: imageAlt || null,
       published,
     },
   });
@@ -133,7 +135,7 @@ export default function DashboardBlogPostEdit() {
                   <div className="mb-4">
                     <img
                       src={post.imageUrl}
-                      alt="Current featured"
+                      alt={post.imageAlt || "Current featured"}
                       className="h-32 w-auto rounded-lg object-cover"
                     />
                   </div>
@@ -153,6 +155,22 @@ export default function DashboardBlogPostEdit() {
                 {actionData?.errors?.image && (
                   <p className="mt-2 text-sm text-red-600">{actionData.errors.image}</p>
                 )}
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="imageAlt" className="block text-sm font-medium leading-6 text-gray-900">
+                Image Alt Text
+              </label>
+              <div className="mt-2">
+                <input
+                  type="text"
+                  name="imageAlt"
+                  id="imageAlt"
+                  defaultValue={post.imageAlt || ''}
+                  className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  placeholder="Describe the image for accessibility and SEO"
+                />
               </div>
             </div>
             
