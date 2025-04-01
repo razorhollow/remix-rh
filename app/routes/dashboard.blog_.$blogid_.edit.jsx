@@ -129,9 +129,7 @@ export default function DashboardBlogPostEdit() {
                     </option>
                   ))}
                 </select>
-                {actionData?.errors?.category && (
-                  <p className="mt-2 text-sm text-red-600">{actionData.errors.category}</p>
-                )}
+                {actionData?.errors?.category ? <p className="mt-2 text-sm text-red-600">{actionData.errors.category}</p> : null}
               </div>
             </div>
 
@@ -164,9 +162,7 @@ export default function DashboardBlogPostEdit() {
                   defaultValue={post.title}
                   className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-                {actionData?.errors?.title && (
-                  <p className="mt-2 text-sm text-red-600">{actionData.errors.title}</p>
-                )}
+                {actionData?.errors?.title ? <p className="mt-2 text-sm text-red-600">{actionData.errors.title}</p> : null}
               </div>
             </div>
             
@@ -182,9 +178,7 @@ export default function DashboardBlogPostEdit() {
                   defaultValue={post.slug}
                   className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-                {actionData?.errors?.slug && (
-                  <p className="mt-2 text-sm text-red-600">{actionData.errors.slug}</p>
-                )}
+                {actionData?.errors?.slug ? <p className="mt-2 text-sm text-red-600">{actionData.errors.slug}</p> : null}
               </div>
             </div>
             
@@ -193,15 +187,13 @@ export default function DashboardBlogPostEdit() {
                 Featured Image
               </label>
               <div className="mt-2">
-                {post.imageUrl && (
-                  <div className="mb-4">
+                {post.imageUrl ? <div className="mb-4">
                     <img
                       src={post.imageUrl}
                       alt={post.imageAlt || "Current featured"}
                       className="h-32 w-auto rounded-lg object-cover"
                     />
-                  </div>
-                )}
+                  </div> : null}
                 <input
                   type="file"
                   name="image"
@@ -214,9 +206,7 @@ export default function DashboardBlogPostEdit() {
                     file:bg-goldenrod file:text-white
                     hover:file:bg-indigo-500"
                 />
-                {actionData?.errors?.image && (
-                  <p className="mt-2 text-sm text-red-600">{actionData.errors.image}</p>
-                )}
+                {actionData?.errors?.image ? <p className="mt-2 text-sm text-red-600">{actionData.errors.image}</p> : null}
               </div>
             </div>
 
@@ -264,9 +254,7 @@ export default function DashboardBlogPostEdit() {
                   defaultValue={post.content}
                   className="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-                {actionData?.errors?.content && (
-                  <p className="mt-2 text-sm text-red-600">{actionData.errors.content}</p>
-                )}
+                {actionData?.errors?.content ? <p className="mt-2 text-sm text-red-600">{actionData.errors.content}</p> : null}
               </div>
             </div>
             
