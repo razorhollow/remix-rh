@@ -8,17 +8,24 @@ cloudinary.config({
 
 export async function uploadImage(file) {
   try {
-    // Convert the file to base64
-    const base64File = file.toString('base64');
-    const uploadStr = `data:image/jpeg;base64,${base64File}`;
-    
-    const result = await cloudinary.uploader.upload(uploadStr, {
+    const result = await cloudinary.uploader.upload(file, {
       folder: 'blog-images',
       resource_type: 'auto',
     });
     return result.secure_url;
   } catch (error) {
     console.error('Cloudinary upload error:', error);
-    throw new Error('Failed to upload image');
+    throw new Error('Failed to upload image to Cloudinary');
+  }
+}
+
+export async function deleteImage(imageUrl) {
+  try {
+    // Extract public_id from the URL
+    const publicId = imageUrl.split('/').slice(-1)[0].split('.')[0];
+    await cloudinary.uploader.destroy(`blog-images/${publicId}`);
+  } catch (error) {
+    console.error('Cloudinary delete error:', error);
+    throw new Error('Failed to delete image from Cloudinary');
   }
 } 

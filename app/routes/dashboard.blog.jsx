@@ -3,6 +3,7 @@ import { Outlet, Form, Link, useLoaderData } from '@remix-run/react';
 import { prisma } from '~/db.server';
 import { useState } from 'react';
 import ConfirmationDialog from '~/components/confirmation-dialog';
+import { deleteImage } from '~/utils/cloudinary.server';
 
 export const loader = async () => {
   const posts = await prisma.blogPost.findMany({
@@ -25,6 +26,24 @@ export const action = async ({ request }) => {
   
   if (action === 'delete') {
     const id = formData.get('id');
+    
+    // Get the post to check for image
+    const post = await prisma.blogPost.findUnique({
+      where: { id },
+      select: { imageUrl: true }
+    });
+    
+    // Delete image from Cloudinary if it exists
+    if (post?.imageUrl) {
+      try {
+        await deleteImage(post.imageUrl);
+      } catch (error) {
+        console.error('Failed to delete image:', error);
+        // Continue with post deletion even if image deletion fails
+      }
+    }
+    
+    // Delete the post
     await prisma.blogPost.delete({ where: { id } });
     return json({ success: true });
   }
