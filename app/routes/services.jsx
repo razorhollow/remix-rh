@@ -11,6 +11,9 @@ export default function Services() {
           src="/images/web-development.webp" 
           alt="Digital tools for outdoor brands" 
           className="absolute w-full h-full object-cover" 
+          loading="eager"
+          width={1920}
+          height={500}
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60"></div>
         <div className="container z-10 mx-auto px-4 text-center">
@@ -38,7 +41,7 @@ export default function Services() {
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 pl-4 border-l-4 border-pine">The Razor Hollow Difference</h2>
           <p className="text-lg mb-6">
-            At Razor Hollow, I don't just build websites—I create custom digital ecosystems that actively convert visitors into paying customers for outdoor brands. While other agencies deliver static online brochures, I engineer comprehensive digital tools strategically designed to drive measurable business growth.
+            At Razor Hollow, I don&apos;t just build websites&mdash;I create custom digital ecosystems that actively convert visitors into paying customers for outdoor brands. While other agencies deliver static online brochures, I engineer comprehensive digital tools strategically designed to drive measurable business growth.
           </p>
         </section>
 
@@ -75,14 +78,14 @@ export default function Services() {
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h4 className="text-xl font-bold mb-4 text-pine">Enhanced Visual Storytelling (Optional)</h4>
               <p>
-                For clients seeking additional impact, I offer professional photography and video production services. These visual assets don't just look beautiful—they're strategically created to highlight your unique value proposition and drive customer engagement.
+                For clients seeking additional impact, I offer professional photography and video production services. These visual assets don&apos;t just look beautiful—they&apos;re strategically created to highlight your unique value proposition and drive customer engagement.
               </p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h4 className="text-xl font-bold mb-4 text-pine">Real Business Results</h4>
               <p>
-                The websites I build aren't just online placeholders—they're active business tools designed to:
+                The websites I build aren&apos;t just online placeholders&mdash;they&apos;re active business tools designed to:
               </p>
               <ul className="list-disc pl-5 mt-2">
                 <li>Generate qualified leads 24/7</li>
@@ -101,7 +104,14 @@ export default function Services() {
             {services.map((service) => (
               <div key={service.slug} className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="h-48 overflow-hidden">
-                  <img src={service.image} alt={service.name} className="w-full h-full object-cover" />
+                  <img 
+                    src={service.image} 
+                    alt={service.name} 
+                    className="w-full h-full object-cover" 
+                    loading="lazy"
+                    width={400}
+                    height={192}
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-3">{service.name}</h3>
@@ -187,4 +197,11 @@ export const meta = () => [
     rel: "canonical",
     href: "https://www.razorhollow.com/services"
   },
+  {
+    tagName: "link",
+    rel: "preload",
+    as: "image",
+    href: "/images/web-development.webp",
+    type: "image/webp"
+  }
 ];

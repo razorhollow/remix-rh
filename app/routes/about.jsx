@@ -4,6 +4,7 @@ import steelheadUrl from '../assets/steelhead.jpg'
 import elkHuntinUrl from '../assets/elk-hunting.jpg'
 import duckHuntinUrl from '../assets/duck-hunting.jpg'
 import beginImgUrl from '../assets/begin.webp'
+import BackgroundPattern from '../components/BackgroundPattern'
 
 const stats = [
   { label: 'Lines of code written', value: '4 million' },
@@ -39,7 +40,7 @@ const values = [
   {
     name: 'Move with purpose',
     description:
-    "Inspired by the ethos of our founder's father, we operate with a sense of urgency and purpose. This value is about more than speed; it’s about deliberate, thoughtful action in everything we do. From the pace at which we tackle projects to the swift, purpose-driven approach we apply in problem-solving, moving with purpose is integral to our success and that of our clients.",
+    "Inspired by the ethos of our founder's father, we operate with a sense of urgency and purpose. This value is about more than speed; it's about deliberate, thoughtful action in everything we do. From the pace at which we tackle projects to the swift, purpose-driven approach we apply in problem-solving, moving with purpose is integral to our success and that of our clients.",
   },
 ]
 
@@ -48,30 +49,7 @@ export default function AboutPage() {
     <main className="isolate">
         {/* Hero section */}
         <div className="relative isolate -z-10">
-          <svg
-            className="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
-            aria-hidden="true"
-          >
-            <defs>
-              <pattern
-                id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84"
-                width={200}
-                height={200}
-                x="50%"
-                y={-1}
-                patternUnits="userSpaceOnUse"
-              >
-                <path d="M.5 200V.5H200" fill="none" />
-              </pattern>
-            </defs>
-            <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
-              <path
-                d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-                strokeWidth={0}
-              />
-            </svg>
-            <rect width="100%" height="100%" strokeWidth={0} fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)" />
-          </svg>
+          <BackgroundPattern />
           <div
             className="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
             aria-hidden="true"
@@ -114,6 +92,9 @@ export default function AboutPage() {
                         src={assetImgURL}
                         alt="rob reynolds and his lab"
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        loading="lazy"
+                        width={176}
+                        height={264}
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
@@ -124,6 +105,9 @@ export default function AboutPage() {
                         src={elkHuntinUrl}
                         alt="elk hunting in Idaho"
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        loading="lazy"
+                        width={176}
+                        height={264}
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
@@ -132,6 +116,9 @@ export default function AboutPage() {
                         src={steelheadUrl}
                         alt="salmon river steelhead"
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        loading="lazy"
+                        width={176}
+                        height={264}
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
@@ -142,6 +129,9 @@ export default function AboutPage() {
                         src={duckHuntinUrl}
                         alt="duck hunting in the rain"
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        loading="lazy"
+                        width={176}
+                        height={264}
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
@@ -150,6 +140,9 @@ export default function AboutPage() {
                         src={shedHuntingUrl}
                         alt="shed hunting in Missouri"
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        loading="lazy"
+                        width={176}
+                        height={264}
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
@@ -192,6 +185,9 @@ export default function AboutPage() {
             src={beginImgUrl}
             alt="a man looking into the forest"
             className="aspect-[5/2] w-full object-cover xl:rounded-3xl"
+            loading="lazy"
+            width={1280}
+            height={512}
           />
         </div>
 
@@ -268,4 +264,23 @@ export const meta = () => [
     rel: "canonical",
     href: "https://www.razorhollow.com/about"
   },
+  {
+    tagName: "link",
+    rel: "preload",
+    as: "image",
+    href: assetImgURL,
+    type: "image/jpeg"
+  },
+  {
+    tagName: "link",
+    rel: "preload",
+    as: "image",
+    href: beginImgUrl,
+    type: "image/webp"
+  },
+  {
+    tagName: "meta",
+    name: "viewport",
+    content: "width=device-width, initial-scale=1"
+  }
 ];
