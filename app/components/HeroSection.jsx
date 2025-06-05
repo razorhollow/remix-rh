@@ -1,14 +1,15 @@
 import { Link } from '@remix-run/react';
 
 import { motion } from 'framer-motion';
-import heroAssetURL from 'app/assets/fly-fishing.webp'
+// TODO: Replace with professional video equipment or business setup image
+import heroAssetURL from 'app/assets/video-production-setup.webp' // Replace fly-fishing.webp
 
 export default function HeroSection() {
   return (
 <div className="relative isolate overflow-hidden pt-14">
         <img
           src={heroAssetURL}
-          alt=""
+          alt="Professional video production equipment"
           className="absolute inset-0 -z-10 h-full w-full object-cover brightness-50"
         />
         <div
@@ -25,6 +26,14 @@ export default function HeroSection() {
         </div>
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+            {/* Optional: Add a small badge or announcement here */}
+            <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-300 ring-1 ring-white/10 hover:ring-white/20">
+              Serving Buffalo → Rochester → Syracuse{' '}
+              <a href="/contact" className="font-semibold text-white">
+                <span className="absolute inset-0" aria-hidden="true" />
+                Get Started <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
           </div>
           <motion.div 
             className="text-center"
@@ -35,18 +44,20 @@ export default function HeroSection() {
             <h1 
               className="text-4xl font-bold tracking-tight text-white sm:text-6xl"
             >
-              From Peak to Pixel
+              Professional Film Production + Web Development
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-300">
-              Combining the power of story with modern technology to elevate outdoor brands
+              Complete digital storytelling for upstate NY businesses. Where professional video production meets custom web development—designed to work together perfectly.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="/contact" className="rounded-md bg-goldenrod px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-amber-300">
-                Get started
+                href="/contact" 
+                className="rounded-md bg-goldenrod px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-amber-300"
+              >
+                Start Your Project
               </a>
               <Link to="services" className="text-sm font-semibold leading-6 text-white">
-                Learn more <span aria-hidden="true">→</span>
+                View Services <span aria-hidden="true">→</span>
               </Link>
             </div>
           </motion.div>

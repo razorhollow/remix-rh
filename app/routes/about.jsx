@@ -1,31 +1,29 @@
-import assetImgURL from '../assets/rob-reynolds.jpg'
-import shedHuntingUrl from '../assets/shed-hunting.jpg'
-import steelheadUrl from '../assets/steelhead.jpg'
-import elkHuntinUrl from '../assets/elk-hunting.jpg'
-import duckHuntinUrl from '../assets/duck-hunting.jpg'
-import beginImgUrl from '../assets/begin.webp'
+import assetImgURL from '../assets/rob-reynolds-professional.webp' 
+import videoProductionUrl from '../assets/video-production-setup.jpg' 
+import beginImgUrl from '../assets/professional-workspace.webp' 
 import BackgroundPattern from '../components/BackgroundPattern'
 
 const stats = [
-  { label: 'Lines of code written', value: '4 million' },
-  { label: 'Video impressions', value: '35,600' },
-  { label: 'Images captured', value: '150 TB' },
+  { label: 'Years in film production', value: '10+' },
+  { label: 'Businesses served', value: '150+' },
+  { label: 'Projects completed', value: '500+' },
 ]
+
 const values = [
   {
     name: 'Have a why',
     description:
-      "Our driving force is our commitment to helping outdoor enthusiasts and professionals leverage technology to build their dream careers. This mission was inspired by our founder's passion for the outdoors and his recognition of the transformative power of digital tools. We help our clients not just to succeed but to thrive by aligning their passions with purposeful and powerful digital solutions.",
+      "Our driving force is our commitment to helping upstate NY businesses leverage professional film production and web development to achieve their goals. This mission is inspired by understanding the transformative power of complete digital storytelling. We help our clients not just to succeed but to thrive by creating digital assets that drive real business results.",
   },
   {
     name: 'Always be learning',
     description:
-      'We embrace the philosophy that learning is an endless journey. In the ever-evolving landscape of technology and outdoor adventures, staying curious and continuously seeking knowledge not only enhances our services but also enriches our personal lives and the lives of those we serve. We encourage our team and our clients to always be open to new ideas and innovations, ensuring that we remain at the forefront of digital creativity and efficiency.',
+      'We embrace the philosophy that learning is an endless journey. In the ever-evolving landscape of film production and web development, staying curious and continuously seeking knowledge not only enhances our services but also enriches our ability to serve clients. We encourage continuous innovation in storytelling techniques, technical capabilities, and business strategy.',
   },
   {
     name: 'Do the right thing',
     description:
-      "Integrity is the cornerstone of Razor Hollow. We believe in doing the right thing, even when no one is watching. This value guides our interactions with clients, partners, and each other. Whether it's transparent communication, honest service delivery, or responsible business practices, our commitment to integrity ensures we build trust and maintain long-lasting relationships in the outdoor and tech industries.",
+      "Integrity is the cornerstone of Razorhollow. We believe in doing the right thing, even when no one is watching. This value guides our interactions with clients, partners, and each other. Whether it's transparent communication, honest service delivery, or responsible business practices, our commitment to integrity ensures we build trust and maintain long-lasting relationships.",
   },
   {
     name: 'Go the extra mile',
@@ -35,7 +33,7 @@ const values = [
   {
     name: 'Anything worth doing is worth doing well',
     description:
-      "We hold ourselves to a standard of excellence in everything we undertake. We believe that anything worth doing not only deserves effort but our best effort. This commitment to quality reflects in our web development, video production, and all services we provide. By consistently delivering work we're proud of, we help elevate our clients' brands to their highest potential.",
+      "We hold ourselves to a standard of excellence in everything we undertake. We believe that anything worth doing not only deserves effort but our best effort. This commitment to quality reflects in our film production, web development, and all services we provide. By consistently delivering work we're proud of, we help elevate our clients' brands to their highest potential.",
   },
   {
     name: 'Move with purpose',
@@ -67,22 +65,22 @@ export default function AboutPage() {
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
               <div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
   <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-    Hi there, I&apos;m Rob Reynolds
+    Hi, I&apos;m Rob Reynolds
   </h1>
   <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-    For over a decade, I&apos;ve been in the outdoor industry—guiding, photographing, and filming adventures. My peers call me the <span className="text-pine italic">&quot;Backwoods Techie&quot;</span> because I know what it&apos;s like to hustle in the wild and still make the tech side work for my clients.
+    I&apos;ve been creating professional video content since 2015, but my journey took an unexpected turn that made me uniquely qualified to serve upstate New York businesses.
   </p>
   <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-    <span className="mt-4 text-lg md:text-xl leading-relaxed text-gray-900">But here&apos;s the deal:</span> After years of filling my clients&apos; books through compelling visuals, I realized the real game-changer wasn&apos;t just the photos or videos—it was the website behind them. A high-converting site that does the heavy lifting, turning curious browsers into paying customers.
+    <span className="mt-4 text-lg md:text-xl leading-relaxed text-gray-900">Here&apos;s what happened:</span> I started Razorhollow as a film production company, passionate about storytelling through video. But when the market demanded web development more than video, I made a strategic decision—learn to build exceptional websites.
   </p>
   <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-    <span className="mt-4 text-lg md:text-xl leading-relaxed text-gray-900">I started off just like you—</span> a small business owner in the outdoor world, unsure how to reach more clients and feeling the pain of missed opportunities. I learned, through trial and error, how to build websites that actually make the phone ring.
+    <span className="mt-4 text-lg md:text-xl leading-relaxed text-gray-900">During this transition,</span> I kept my video skills sharp through legal videography work—depositions, court proceedings, situations where precision isn&apos;t optional. This experience taught me standards of reliability and technical excellence that now benefit every client.
   </p>
   <p className="mt-4 text-lg md:text-xl leading-relaxed">
-    Now, I&apos;ve doubled down on what really moves the needle: strategic web design that converts. My photography and video skills? They&apos;re still in the toolkit—but only to supercharge your website&apos;s effectiveness.
+    <span className="text-gray-900">Today, I&apos;m returning to my film production roots—but enhanced.</span> Razorhollow now offers something unique in upstate NY: professional film production and custom web development designed to work together seamlessly.
   </p>
   <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-    I know how overwhelming it can be trying to grow an outdoor business in a crowded digital space. That&apos;s why I&apos;m laser-focused on building websites that immediately capture attention, showcase your brand authentically, and bring in more paying clients—so you can spend less time worrying about marketing and more time doing what you love.
+    I understand the challenges facing regional businesses because I&apos;ve navigated them myself. That&apos;s why I&apos;m focused on creating digital assets that don&apos;t just look good—they drive measurable business results for companies ready to stand out in their markets.
   </p>
 </div>
                 <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
@@ -90,7 +88,7 @@ export default function AboutPage() {
                     <div className="relative">
                       <img
                         src={assetImgURL}
-                        alt="rob reynolds and his lab"
+                        alt="Rob Reynolds, professional filmmaker and web developer"
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                         loading="lazy"
                         width={176}
@@ -102,8 +100,8 @@ export default function AboutPage() {
                   <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
                     <div className="relative">
                       <img
-                        src={elkHuntinUrl}
-                        alt="elk hunting in Idaho"
+                        src={videoProductionUrl}
+                        alt="Professional video production equipment"
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                         loading="lazy"
                         width={176}
@@ -113,8 +111,8 @@ export default function AboutPage() {
                     </div>
                     <div className="relative">
                       <img
-                        src={steelheadUrl}
-                        alt="salmon river steelhead"
+                        src={beginImgUrl}
+                        alt="Custom web development workspace"
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                         loading="lazy"
                         width={176}
@@ -123,31 +121,7 @@ export default function AboutPage() {
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
                   </div>
-                  <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
-                    <div className="relative">
-                      <img
-                        src={duckHuntinUrl}
-                        alt="duck hunting in the rain"
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                        loading="lazy"
-                        width={176}
-                        height={264}
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
-                    <div className="relative">
-                      <img
-                        src={shedHuntingUrl}
-                        alt="shed hunting in Missouri"
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                        loading="lazy"
-                        width={176}
-                        height={264}
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -160,9 +134,12 @@ export default function AboutPage() {
             <div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
               <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
                 <p className="text-xl leading-8 text-gray-600">
-                  Our mission is to empower outdoor professionals by leveraging cutting-edge technology and authentic storytelling. Through our unique blend of web development, video production, and digital marketing expertise, we are dedicated to helping hunting and fishing guides, lodge owners, and outdoor product companies craft successful careers around their passions. 
+                  To provide complete digital storytelling solutions for upstate New York businesses—where professional film production and custom web development work together to drive measurable results. We believe every business has a story worth telling professionally, and we're here to tell it completely.
                 </p>
                 <div className="mt-10 max-w-xl text-base leading-7 text-gray-700">
+                  <p>
+                    Through our unique combination of film expertise, web development capabilities, and science-backed storytelling methodology, we help regional businesses create digital assets that don't just look impressive—they convert viewers into customers and generate real revenue.
+                  </p>
                 </div>
               </div>
               <div className="lg:flex lg:flex-auto lg:justify-center">
@@ -183,7 +160,7 @@ export default function AboutPage() {
         <div className="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
           <img
             src={beginImgUrl}
-            alt="a man looking into the forest"
+            alt="Professional video production and web development workspace"
             className="aspect-[5/2] w-full object-cover xl:rounded-3xl"
             loading="lazy"
             width={1280}
@@ -196,7 +173,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our core values</h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-            our core values are more than just words—they are the principles that guide every decision and action we take. From pioneering cutting-edge solutions in the outdoor industry to ensuring every client interaction is rooted in integrity, our values shape our commitment to excellence and drive our mission to empower outdoor professionals through innovative technology.
+            These values guide every project and client interaction. From revenue-focused storytelling to technical precision learned through legal videography, our principles ensure we deliver digital solutions that drive real business results for upstate New York companies.
             </p>
           </div>
           <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -208,57 +185,13 @@ export default function AboutPage() {
             ))}
           </dl>
         </div>
-
-
-        {/* Blog section */}
-        {/* <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">From the blog</h2>
-            <p className="mt-2 text-lg leading-8 text-gray-600">
-              Vel dolorem qui facilis soluta sint aspernatur totam cumque.
-            </p>
-          </div>
-          <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {blogPosts.map((post) => (
-              <article
-                key={post.id}
-                className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
-              >
-                <img src={post.imageUrl} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover" />
-                <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40" />
-                <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
-
-                <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-                  <time dateTime={post.datetime} className="mr-8">
-                    {post.date}
-                  </time>
-                  <div className="-ml-4 flex items-center gap-x-4">
-                    <svg viewBox="0 0 2 2" className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
-                      <circle cx={1} cy={1} r={1} />
-                    </svg>
-                    <div className="flex gap-x-2.5">
-                      <img src={post.author.imageUrl} alt="" className="h-6 w-6 flex-none rounded-full bg-white/10" />
-                      {post.author.name}
-                    </div>
-                  </div>
-                </div>
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
-                  <a href={post.href}>
-                    <span className="absolute inset-0" />
-                    {post.title}
-                  </a>
-                </h3>
-              </article>
-            ))}
-          </div>
-        </div> */}
       </main> 
   );
 }
 
 export const meta = () => [
-  { title: "About Razor Hollow: Our Outdoor Marketing Expertise" },
-  { name: "description", content: "Learn about Razor Hollow's mission to empower outdoor professionals with cutting-edge technology and storytelling. Discover our values and expertise."},
+  { title: "About Razorhollow: Film Production + Web Development | Upstate NY" },
+  { name: "description", content: "Learn about Rob Reynolds and Razorhollow's journey from film production to web development and back to complete digital storytelling for upstate NY businesses."},
   {
     tagName: "link",
     rel: "canonical",
