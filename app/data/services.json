@@ -1,48 +1,32 @@
 [
   {
-    "name": "Website Development",
-    "icon": "website-development",
-    "slug": "web-development",
-    "tag": "Outdoor Web Development",
-    "meta": "Razor Hollow offers bespoke web development services for outdoor brands, creating stunning, functional websites that attract and convert visitors.",
-    "headline": "Elevating Outdoor Brands with Scalable and SEO-Optimized Web Solutions",
-    "image": "/images/web-development.webp",
-    "description": "At Razor Hollow, we go beyond traditional web design by building full stack web applications that are perfectly tailored to your brand's unique needs. Our solutions are not just websites; they are scalable platforms designed to grow into fully-featured software packages. </br></br>**Custom Full Stack Development.** We craft web applications that cater specifically to your business, ensuring scalability and flexibility. Our code is clean, optimized, and built with the future in mind, ready to evolve as your business grows. </br></br>**Advanced SEO Integration.** Unlike many, we integrate SEO best practices from the ground up, enhancing your site's visibility and search engine ranking from the start. </br></br>**Unique to Your Brand.** Each project we undertake is a bespoke creation, intended to reflect the spirit and identity of your brand while providing all the functionalities you need to succeed online. </br></br>**Comprehensive Support.** From initial concept to final delivery and beyond, we offer full support and maintenance to ensure your web presence remains strong and effective. </br></br>**And much more!** Partner with us for a web development experience that sets you apart in the competitive outdoor market, ensuring a digital presence as adventurous as your brand."
-  }
-  ,
-  {
-    "name": "Video Production",
-    "icon": "video-production",
-    "slug": "video-production",
-    "tag": "Outdoor Video Production Services",
-    "meta": "Professional video production services from Razor Hollow. Enhance your brand with high-quality outdoor videos that captivate and engage your audience.",
-    "headline": "Tell Your Unique Story with Impactful Video Production",
+    "name": "Professional Film Production",
+    "icon": "film-production",
+    "slug": "film-production",
+    "tag": "Revenue-Focused Video Production",
+    "meta": "Professional film production for upstate NY businesses. Hollywood-quality cinema cameras and science-backed storytelling that drives measurable results.",
+    "headline": "Professional Film Production That Drives Business Results",
     "image": "/images/video-production.webp",
-    "description": "At Razor Hollow, we harness the power of video to bring the great outdoors directly to your audience, enhancing engagement and driving growth. Studies show that viewers retain 95% of a message when they watch it in a video compared to 10% when reading it in text. </br></br>**Engaging Content Creation.** We create visually stunning and emotionally compelling videos that capture the essence of your outdoor adventures, turning viewers into followers and followers into customers. </br></br>**Strategic Marketing Integration.** Our videos are crafted not just for entertainment but as powerful marketing tools, optimized for sharing across various platforms, ensuring maximum visibility. </br></br>**Full Production Capabilities.** From initial storyboard to final edits, our team manages every detail with precision, ensuring a high-quality product that resonates with your target audience. </br></br>**And much more!** Join us to leverage the unique power of video production and see how it can transform your marketing strategy, making your brand a recognized name in the outdoor industry."
-  }
-  ,
-  {
-    "name": "Photography",
-    "icon": "photography", 
-    "slug": "photography",
-    "tag": "Professional Outdoor Photography",
-    "meta": "Capture the essence of the outdoors with Razor Hollow's professional photography services. Stunning visuals that elevate your brand presence.",
-    "headline": "Unleashing the Power of Your Outdoor Adventures Through Captivating Photography and Photo Editing", 
-    "image": "/images/photography.webp",
-    "description": "At Razor Hollow, we capture the raw beauty and untamed spirit of the outdoors through our expert photography services. Our aim is to bring your outdoor adventures to life, enhancing your brand's narrative with images that speak louder than words.</br></br>**High-quality outdoor photography.** Our seasoned photographers utilize top-of-the-line equipment and advanced methods to bring out the best of your outdoor journey, highlighting the splendor and thrill of your offerings. By doing so, we'll transform your adventures into awe-inspiring images that not only showcase the allure of the great outdoors but also encapsulate the essence of your brand. </br></br>**Customized photo shoots.** We believe that every business has a unique story to tell. Thus, we tailor each photo shoot to your specific business and vision. This means from the onset, we work closely with you to understand your brand's personality, coordinating photo shoots that accurately depict your uniqueness. This bespoke approach ensures your brand stands out from the crowd, leaving a lasting impression on your audience. </br></br>**Expert editing and retouching.** After the shoot, our work doesn't stop. We take on the nitty-gritty of editing and retouching those pictures. Have photos of your own that you would like to showcase? We can edit those too! This guarantees that every image mirrors the highest quality and aligns with your brand's aesthetics. You can be assured of a visual consistency that elevates your brand's identity, compelling your audience to connect with your business. </br></br>**Digital delivery of images.** To step up your marketing game, we provide you with digital copies of your images. Using them in your marketing and promotional materials has never been easier. This means, even if you are an adventure seeker or an outdoor enthusiast, you'll have professional-grade images that amplify your brand's visual appeal. </br></br>**And much more!** We promise to deliver a top-notch service that not only meets but exceeds your expectations. With us, you will get a comprehensive visual marketing solution tailor-made for the outdoor industry."
+    "description": "Professional video production using Hollywood-quality cinema cameras and proven storytelling methodology. Every project is designed to drive measurable business results through strategic narrative development and technical excellence. </br></br>**Corporate & Brand Storytelling.** We create compelling company stories, executive communications, and brand videos that connect authentically with your target audience and drive customer engagement. </br></br>**Training & Educational Content.** Professional training videos, employee onboarding content, and customer education materials that improve efficiency and reduce ongoing support costs. </br></br>**Product & Service Demonstrations.** Showcase your offerings with videos that educate prospects and drive purchasing decisions through clear, compelling demonstrations that highlight value. </br></br>**Customer Success Stories.** Authentic testimonial videos and case studies that build trust and social proof, helping prospects overcome objections and make buying decisions. </br></br>**Revenue-Focused Methodology.** Using science-backed storytelling principles, every creative decision serves your business objectives and conversion goals—not just aesthetic appeal. </br></br>**Hollywood-Quality Production.** RED Epic and Blackmagic Cinema cameras, professional lighting, broadcast-quality audio, and legal-grade precision ensure your content stands out professionally."
   },
   {
-    "name": "Marketing Strategy",
-    "icon": "marketing-strategy",
-    "slug": "marketing-strategy",
-    "tag": "Outdoor Marketing Strategy",
-    "meta": "Our tailored marketing strategies help outdoor businesses thrive. From branding to digital marketing, Razor Hollow drives growth and visibility.",
-    "headline": "Strategize, Stand Out, and Succeed with Tailored Marketing Solutions",
-    "image": "/images/marketing-strategy.webp",
-    "description": "At Razor Hollow, we understand the frustration of investing in digital media without reaping the desired results. We specialize in crafting marketing strategies that utilize your digital assets effectively, ensuring they tell your brand’s unique story and resonate with your audience. </br></br>**Targeted Strategy Development.** We design bespoke marketing strategies that help your brand cut through the noise, highlighting what makes you unique in the competitive outdoor industry. </br></br>**Leveraging Digital Assets.** Our expertise in digital media transforms your investments into compelling narratives that capture attention and drive engagement. </br></br>**Measurable Results.** With our strategic approach, we ensure that every dollar you spend maximizes your reach and enhances your brand visibility. </br></br>**SEO Optimization.** Search Engine Optimization (SEO) is at the core of our marketing strategies. We conduct thorough keyword research to ensure your content ranks high on search engines. By optimizing on-page elements, creating quality backlinks, and ensuring fast load times, we help your website gain more organic traffic and improve its visibility in search engine results. </br></br>**Content Calendars.** A well-planned content calendar is essential for consistent and effective marketing. We develop detailed content calendars that outline what content will be created, when it will be published, and on which platforms. This ensures your audience always has fresh, engaging content to interact with, keeping your brand top-of-mind. </br></br>**Content Marketing.** Content is king in digital marketing, and we excel in creating high-quality content that educates, entertains, and engages your audience. From blog posts and articles to videos and infographics, we produce a variety of content types that align with your brand’s voice and message. Our content marketing strategies are designed to build trust and authority, driving long-term customer loyalty and engagement. </br></br>**Social Media Management.** Our social media experts manage your social platforms, creating and curating content that boosts engagement and builds a community around your brand. We use analytics to track performance and adjust strategies to ensure optimal results. </br></br>**Email Marketing.** Email remains one of the most effective channels for direct communication. We design email marketing campaigns that nurture leads, promote your services, and keep your audience informed about your latest offerings. Our personalized email strategies ensure high open rates and conversions. </br></br>**And Much More!** Partner with us to refine your marketing approach and watch as your brand grows and thrives in the digital landscape. With Razor Hollow, your marketing strategy will be comprehensive, effective, and perfectly tailored to your unique needs."
+    "name": "Video Marketing Support",
+    "icon": "video-marketing",
+    "slug": "video-marketing-support", 
+    "tag": "Technical Support for Video Deployment",
+    "meta": "Video marketing support services including landing pages, video integration, and technical deployment to ensure your professional videos perform optimally.",
+    "headline": "Technical Support to Showcase Your Videos Effectively",
+    "image": "/images/video-marketing.webp",
+    "description": "Professional technical support to ensure your video content performs optimally online. While our primary focus is film production, we provide the technical expertise needed to deploy your videos effectively and drive results. </br></br>**Video-Optimized Landing Pages.** Simple, conversion-focused landing pages designed specifically to showcase your video content and drive specific business actions. </br></br>**Video Integration Services.** Technical support to integrate your professional videos into your existing website, CRM, or marketing platforms seamlessly and effectively. </br></br>**Click Funnels & Conversion Optimization.** Sales funnel creation and optimization specifically designed around your video content to maximize conversion rates and ROI. </br></br>**Simple Showcase Websites.** When needed, we create clean, professional websites focused entirely on presenting your video content effectively—no complex web development distractions. </br></br>**Technical Deployment Support.** Hosting optimization, mobile responsiveness, loading speed optimization, and analytics setup to ensure your videos perform across all platforms. </br></br>**Ongoing Video Marketing Consultation.** Strategic guidance on how to use your video content effectively across different marketing channels and campaigns."
+  },
+  {
+    "name": "Legal Videography",
+    "icon": "legal-videography", 
+    "slug": "legal-videography",
+    "tag": "Professional Legal Video Services",
+    "meta": "Professional legal videography services through CSR Court Reporting. Depositions, court proceedings, and legal video with precision and reliability.",
+    "headline": "Professional Legal Videography Services", 
+    "image": "/images/legal-videography.webp",
+    "description": "Professional legal videography services provided through our partnership with CSR Court Reporting. The same precision and technical standards that ensure reliability in legal proceedings enhance all our commercial video work. </br></br>**Deposition Services.** Professional video recording of depositions with multiple camera angles, clear audio, and synchronized transcription services for legal proceedings. </br></br>**Remote Video Technology.** Advanced setup for remote depositions and virtual legal proceedings, ensuring all participants can engage effectively regardless of location. </br></br>**Court Proceeding Documentation.** Professional video documentation of trials, hearings, and legal events with broadcast-quality equipment and reliable technical execution. </br></br>**Expert Witness Preparation.** Video services for expert witness preparation, including practice sessions and presentation optimization for legal proceedings. </br></br>**Legal-Grade Standards.** Experience with situations where precision isn't optional has elevated our technical standards and reliability across all video projects. </br></br>**Partnership with CSR Court Reporting.** Full-service legal video through established court reporting partnerships, ensuring professional service and industry expertise."
   }
-  
 ]
-
-
-

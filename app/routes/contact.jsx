@@ -131,19 +131,19 @@ export default function Contact() {
             </div>
             
             {/* Main Info Section */}
-            <h1 className="text-4xl font-bold text-gray-900">Get in Touch with Razor Hollow</h1>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Become Discoverable.</h2>
+            <h1 className="text-4xl font-bold text-gray-900">Ready for Professional Video That Drives Results?</h1>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Let's Create Your Complete Digital Story.</h2>
             
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Say goodbye to the daunting task of keeping up with the digital marketing world. As an outdoor professional, your time is better spent doing what you do best—whether that's guiding adventures, designing gear, or managing your outdoor business. Let me handle turning your digital presence into a sales-generating tool.
+              Professional film production with the technical expertise to ensure your videos work effectively online. Based in the Elmira/Corning area, we serve businesses throughout the Buffalo-Rochester-Syracuse corridor with Hollywood-quality equipment and revenue-focused storytelling.
             </p>
 
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              At Razor Hollow, I create custom digital ecosystems specifically designed for outdoor brands. Unlike generic websites that act as static brochures, I build platforms that actively convert visitors into customers. My approach combines strategic marketing expertise with technical development to deliver measurable business results for your outdoor company.
+              Unlike typical videographers who hand you files and disappear, we provide complete video marketing support—from initial concept through technical deployment. Your videos will look professional and perform effectively across all your marketing channels.
             </p>
 
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Whether you need a complete website overhaul, strategic marketing guidance, or professional visual assets to showcase your outdoor products and services, I provide the expertise you need to stand out in today's competitive landscape.
+              Whether you need corporate storytelling, training videos, product demonstrations, or the technical support to showcase them effectively online, we have the expertise to drive measurable business results for upstate New York companies.
             </p>
             
             {/* Contact Information */}
@@ -154,7 +154,8 @@ export default function Contact() {
                   <BuildingOffice2Icon className="h-7 w-6 text-gray-400" aria-hidden="true" />
                 </dt>
                 <dd>
-                  Big Flats, NY 14814
+                  Elmira/Corning, NY<br />
+                  <span className="text-sm text-gray-500">Serving Buffalo → Rochester → Syracuse corridor</span>
                 </dd>
               </div>
               <div className="flex gap-x-4">
@@ -175,7 +176,7 @@ export default function Contact() {
                 </dt>
                 <dd>
                   <a className="hover:text-gray-900" href="mailto:rob@razorhollow.com">
-                    hello@razorhollow.com
+                    rob@razorhollow.com
                   </a>
                 </dd>
               </div>
@@ -187,23 +188,28 @@ export default function Contact() {
               
               <dl className="mt-6 space-y-6">
                 <div>
-                  <dt className="text-lg font-medium text-gray-900">How long does a typical website project take?</dt>
-                  <dd className="mt-2 text-base text-gray-600">Most custom website projects take 4-6 weeks from our initial discovery call to launch. The timeline depends on project scope, content readiness, and your team's availability for feedback. I'll provide a detailed timeline during our initial consultation.</dd>
+                  <dt className="text-lg font-medium text-gray-900">How long does a typical video project take?</dt>
+                  <dd className="mt-2 text-base text-gray-600">Most video projects take 2-4 weeks from initial consultation to final delivery, depending on scope and complexity. Projects requiring technical deployment support (landing pages, integration) may take 3-6 weeks. I'll provide a detailed timeline during our consultation.</dd>
                 </div>
                 
                 <div>
-                  <dt className="text-lg font-medium text-gray-900">Do you work with businesses outside the outdoor industry?</dt>
-                  <dd className="mt-2 text-base text-gray-600">While I specialize in creating digital solutions for outdoor brands, I occasionally take on projects in adjacent industries where my expertise will add significant value. Feel free to reach out to discuss your specific needs.</dd>
+                  <dt className="text-lg font-medium text-gray-900">Do you work with businesses outside upstate New York?</dt>
+                  <dd className="mt-2 text-base text-gray-600">My primary focus is serving businesses in the Buffalo-Rochester-Syracuse corridor, but I occasionally work with companies outside this area when the project aligns well with my expertise. Feel free to reach out to discuss your specific needs.</dd>
                 </div>
                 
                 <div>
-                  <dt className="text-lg font-medium text-gray-900">What makes your websites different from others?</dt>
-                  <dd className="mt-2 text-base text-gray-600">I don't just build pretty websites—I create strategic business tools designed to generate leads and convert visitors. Every design decision, feature, and piece of content serves your business objectives, with conversion optimization built in from the ground up.</dd>
+                  <dt className="text-lg font-medium text-gray-900">What makes your video services different from other producers?</dt>
+                  <dd className="mt-2 text-base text-gray-600">I don't just create beautiful videos—I ensure they work effectively for your business. This includes technical deployment support, optimization for different platforms, and revenue-focused storytelling methodology. Most videographers can't handle the technical integration side.</dd>
                 </div>
                 
                 <div>
-                  <dt className="text-lg font-medium text-gray-900">What information should I prepare before our first meeting?</dt>
-                  <dd className="mt-2 text-base text-gray-600">It's helpful to have your business goals, target audience information, any existing brand guidelines, and examples of websites you like. Most importantly, be ready to discuss what success looks like for your digital presence and how it connects to your overall business strategy.</dd>
+                  <dt className="text-lg font-medium text-gray-900">What should I prepare before our first meeting?</dt>
+                  <dd className="mt-2 text-base text-gray-600">It's helpful to have your business goals, target audience information, examples of videos you like, and a clear idea of how you plan to use the video content. Most importantly, be ready to discuss what success looks like and how video fits into your overall marketing strategy.</dd>
+                </div>
+                
+                <div>
+                  <dt className="text-lg font-medium text-gray-900">Do you provide the technical support for video deployment?</dt>
+                  <dd className="mt-2 text-base text-gray-600">Yes! This is what sets me apart. I can create landing pages, integrate videos into your existing website, set up conversion tracking, and ensure everything works optimally across all devices. You get both the creative production and technical deployment expertise.</dd>
                 </div>
               </dl>
             </div>
@@ -240,7 +246,7 @@ export default function Contact() {
                     name="first-name"
                     id="first-name"
                     autoComplete="given-name"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pine sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -254,7 +260,7 @@ export default function Contact() {
                     name="last-name"
                     id="last-name"
                     autoComplete="family-name"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pine sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -268,7 +274,7 @@ export default function Contact() {
                     name="email"
                     id="email"
                     autoComplete="email"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pine sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -282,7 +288,7 @@ export default function Contact() {
                     name="phone-number"
                     id="phone-number"
                     autoComplete="tel"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pine sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -295,7 +301,7 @@ export default function Contact() {
                     name="message"
                     id="message"
                     rows={4}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pine sm:text-sm sm:leading-6"
                     defaultValue={''}
                   />
                 </div>
@@ -304,9 +310,9 @@ export default function Contact() {
             <div className="mt-8 flex justify-end">
               <button
                 type="submit"
-                className="rounded-md bg-goldenrod px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md bg-pine px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
               >
-                Send message
+                Start Your Project
               </button>
             </div>
           </div>
@@ -318,8 +324,8 @@ export default function Contact() {
 
 export const meta = () => {
   return [
-    { title: 'Contact Razor Hollow | Outdoor Marketing Experts' },
-    { name: "description", content: "Get in touch with Razor Hollow. Reach out for inquiries about our outdoor marketing services and discover how we can help your business succeed." },
+    { title: 'Contact Razor Hollow | Professional Video Production | Upstate NY' },
+    { name: "description", content: "Ready for professional video that drives results? Contact Razorhollow for film production and video marketing support across the Buffalo-Rochester-Syracuse corridor." },
     {
       tagName: "link",
       rel: "canonical",
