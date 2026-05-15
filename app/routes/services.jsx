@@ -7,6 +7,8 @@ import serviceHeroIMG from '../assets/services-hero.webp'
 export default function Services() {
   return (
     <div className="min-h-screen flex flex-col items-center bg-gray-50">
+      <div className="w-full bg-amber-100 border-b border-amber-300 py-3 text-center text-sm font-medium text-amber-900">Our primary offers have moved to <a href="/packages" className="underline">commercial video packages</a> (Visibility, Growth, Authority).</div>
+
       {/* Hero Section */}
       <div className="relative w-full h-[500px] overflow-hidden flex items-center justify-center">
         <img 
