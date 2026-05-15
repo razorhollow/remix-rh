@@ -23,7 +23,7 @@ export default function FooterComponent({ actionData }) {
           <div className="grid grid-cols-2 gap-6 xl:col-span-2">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">Services</h3>
+                <h3 className="text-sm font-semibold leading-6 text-white">Packages</h3>
                 <ul className="mt-6 space-y-4">
                   {navigation.services.map((item) => (
                     <li key={item.name}>
@@ -69,9 +69,9 @@ export default function FooterComponent({ actionData }) {
           </div>
           {!actionData ? (
           <div className="mt-10 xl:mt-0">
-            <h3 className="text-sm font-semibold leading-6 text-white">Digital Storytelling Insights</h3>
+            <h3 className="text-sm font-semibold leading-6 text-white">Video Campaign Insights</h3>
             <p className="mt-2 text-sm leading-6 text-gray-300">
-              Strategic insights on film production, web development, and revenue-driving digital content for upstate NY businesses.
+              Practical production and distribution insights for Upstate NY teams using video to drive growth.
             </p>
             <Form 
               className="mt-6 sm:flex sm:max-w-md"

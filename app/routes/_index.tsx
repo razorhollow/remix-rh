@@ -29,28 +29,28 @@ export const loader = async () => {
 };
 
 export const meta: MetaFunction = () => [
-  { title: "Professional Film Production + Web Development | Upstate NY | Razorhollow" },
-  { name: "description", content: "Complete digital storytelling for upstate NY businesses. Professional film production and custom web development designed together for measurable results. Serving Buffalo, Rochester, Syracuse, Elmira, Corning." },
+  { title: "Commercial Video Packages | Upstate NY | Razorhollow" },
+  { name: "description", content: "Premium commercial video production for Upstate NY businesses. Choose Visibility, Growth, or Authority packages for campaigns that drive leads and trust." },
   {
     tagName: "link",
     rel: "canonical",
     href: "https://www.razorhollow.com"
   },
   // Additional SEO meta tags for local targeting
-  { name: "keywords", content: "video production buffalo, film production rochester, corporate video syracuse, video production elmira corning, web development upstate ny, business video production southern tier, professional videographer western new york" },
+  { name: "keywords", content: "commercial video packages, video production buffalo, brand film rochester, business video syracuse, vertical video southern tier" },
   { name: "geo.region", content: "US-NY" },
   { name: "geo.placename", content: "Buffalo, Rochester, Syracuse, Elmira, Corning, Binghamton, New York" },
   { name: "ICBM", content: "42.5584, -77.0574" }, // Coordinates more central to your actual service area including Southern Tier
   // Open Graph tags for social sharing
-  { property: "og:title", content: "Professional Film Production + Web Development | Razorhollow" },
-  { property: "og:description", content: "Complete digital storytelling for upstate NY businesses. Film production and web development designed together for measurable results. Southern Tier to Western NY." },
+  { property: "og:title", content: "Commercial Video Packages | Razorhollow" },
+  { property: "og:description", content: "Commercial video packages for upstate NY businesses. Visibility, Growth, and Authority plans built for measurable marketing outcomes." },
   { property: "og:type", content: "website" },
   { property: "og:url", content: "https://www.razorhollow.com" },
   { property: "og:locale", content: "en_US" },
   // Twitter Card tags
   { name: "twitter:card", content: "summary_large_image" },
-  { name: "twitter:title", content: "Professional Film Production + Web Development | Razorhollow" },
-  { name: "twitter:description", content: "Complete digital storytelling for upstate NY businesses. Film production and web development designed together for measurable results. Southern Tier to Western NY." },
+  { name: "twitter:title", content: "Commercial Video Packages | Razorhollow" },
+  { name: "twitter:description", content: "Commercial video packages for upstate NY businesses. Visibility, Growth, and Authority plans built for measurable marketing outcomes." },
 ];
 
 export default function Index() {
